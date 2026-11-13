@@ -1,272 +1,139 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Activity,
-  Layers,
-  BarChart,
-  Eye,
-  CheckCircle,
-  MessageSquare,
-  Lock,
-  ArrowRight,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, MessageSquare, Zap } from "lucide-react";
 
-export default function ClientPortalSection() {
-  const [activeTab, setActiveTab] = useState<"metrics" | "creatives" | "roadmap">(
-    "metrics"
-  );
+interface ClientPortalSectionProps {
+  onOpenContact?: () => void;
+}
 
+export default function ClientPortalSection({ onOpenContact }: ClientPortalSectionProps) {
   return (
-    <section id="portal" className="py-24 bg-gray-50/60 dark:bg-[#0E1017] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#FF5C28]" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-              TRANSPARENCY & TECHNOLOGY
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-gray-900 dark:text-white leading-tight">
-            BHQ Growth OS.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
-              Live 24/7 Client Portal.
-            </span>
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400">
-            No waiting for monthly PDF reports. Track live ad spend, real-time blended ROAS, UGC production pipelines, and daily Slack communication right from your custom dashboard.
-          </p>
+    <section id="portal" className="py-24 bg-white relative overflow-hidden">
+      {/* Ambient background blur */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-orange-50 via-pink-50 to-purple-50 rounded-full blur-3xl opacity-70" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        {/* Eyebrow Pill */}
+        <div className="mb-4">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+            OUR DIFFERENCE
+          </span>
         </div>
 
-        {/* Dashboard Mockup Container */}
-        <div className="max-w-5xl mx-auto rounded-3xl bg-white dark:bg-[#161B26] border border-gray-200/80 dark:border-white/10 shadow-2xl overflow-hidden">
-          {/* Top Mockup Header Bar */}
-          <div className="px-6 py-4 bg-gray-100/70 dark:bg-white/5 border-b border-gray-200/80 dark:border-white/5 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <div className="w-3 h-3 rounded-full bg-green-400" />
+        {/* Heading */}
+        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 leading-[1.05] mb-4">
+          <span>Your Work.</span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            Your Control.
+          </span>
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto font-normal leading-relaxed mb-12">
+          We don&apos;t just work for you — we work <strong className="text-gray-900">with you</strong>.
+          <br />
+          Everything. Transparent. In your hands.
+        </p>
+
+        {/* Phone Mockup (Matching Page 3 of reference PDF) */}
+        <div className="relative mx-auto max-w-[340px] sm:max-w-[360px] rounded-[3rem] bg-gray-900 p-3 shadow-2xl border-4 border-gray-800">
+          {/* Dynamic Island / Notch */}
+          <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-30" />
+
+          {/* Screen Content */}
+          <div className="relative rounded-[2.5rem] bg-white overflow-hidden text-left p-5 pt-8 shadow-inner border border-gray-100">
+            {/* Top Bar */}
+            <div className="flex items-center justify-between text-[11px] text-gray-400 font-bold mb-4 pt-1">
+              <span>9:41</span>
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                <span>Live Portal</span>
               </div>
-              <span className="text-xs font-mono font-semibold text-gray-500 dark:text-gray-400">
-                portal.brandsheadquarter.com/live-insights
+            </div>
+
+            {/* User Greeting */}
+            <div className="mb-4">
+              <span className="text-[10px] uppercase font-bold text-gray-400 tracking-wider block">
+                Brands Headquarter OS
               </span>
+              <h4 className="text-base font-black text-gray-900">
+                Good morning, Partner 👋
+              </h4>
+              <p className="text-[11px] text-gray-500">Here&apos;s what&apos;s happening with your brand</p>
             </div>
 
-            {/* Portal navigation tabs */}
-            <div className="flex items-center gap-1.5 bg-gray-200/60 dark:bg-white/10 p-1 rounded-xl">
-              <button
-                onClick={() => setActiveTab("metrics")}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "metrics"
-                    ? "bg-white dark:bg-[#11141C] text-gray-900 dark:text-white shadow-xs"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900"
-                }`}
-              >
-                Live Metrics
-              </button>
-              <button
-                onClick={() => setActiveTab("creatives")}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "creatives"
-                    ? "bg-white dark:bg-[#11141C] text-gray-900 dark:text-white shadow-xs"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900"
-                }`}
-              >
-                Creative Pipeline
-              </button>
-              <button
-                onClick={() => setActiveTab("roadmap")}
-                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
-                  activeTab === "roadmap"
-                    ? "bg-white dark:bg-[#11141C] text-gray-900 dark:text-white shadow-xs"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900"
-                }`}
-              >
-                Growth Roadmap
-              </button>
+            {/* Status Pills */}
+            <div className="grid grid-cols-3 gap-2 mb-4 text-center">
+              <div className="p-2 rounded-xl bg-orange-50 border border-orange-100">
+                <span className="text-xs font-black text-[#FF5C28] block">3</span>
+                <span className="text-[9px] font-bold text-gray-500">In Progress</span>
+              </div>
+              <div className="p-2 rounded-xl bg-purple-50 border border-purple-100">
+                <span className="text-xs font-black text-purple-600 block">1</span>
+                <span className="text-[9px] font-bold text-gray-500">Approval</span>
+              </div>
+              <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-100">
+                <span className="text-xs font-black text-emerald-600 block">28</span>
+                <span className="text-[9px] font-bold text-gray-500">Completed</span>
+              </div>
+            </div>
+
+            {/* Approval Banner */}
+            <div className="p-3 rounded-xl bg-amber-50/80 border border-amber-200/80 flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <Clock className="w-3.5 h-3.5 text-amber-600" />
+                <span className="text-[10px] font-bold text-amber-900">
+                  1 UGC Reel Awaiting Approval
+                </span>
+              </div>
+              <span className="text-[10px] font-bold text-amber-700">Review &rarr;</span>
+            </div>
+
+            {/* Team Effort Metrics */}
+            <div className="mb-4">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-2">
+                Your Squad&apos;s Effort This Month
+              </span>
+              <div className="grid grid-cols-2 gap-2">
+                <div className="p-2.5 rounded-xl bg-gray-50 border border-gray-100">
+                  <span className="text-lg font-black text-gray-900 block">214</span>
+                  <span className="text-[9px] text-gray-500 font-medium">Tasks Delivered</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-gray-50 border border-gray-100">
+                  <span className="text-lg font-black text-emerald-600 block">&lt;2h</span>
+                  <span className="text-[9px] text-gray-500 font-medium">Avg Response Time</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Live Campaign Status */}
+            <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 space-y-1.5">
+              <div className="flex justify-between text-[10px] font-bold">
+                <span className="text-gray-700">Meta Advantage+ Spend</span>
+                <span className="text-[#FF5C28]">4.1x ROAS (On Track)</span>
+              </div>
+              <div className="w-full h-1.5 rounded-full bg-gray-200 overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-[#FF5C28] to-[#EC4899] rounded-full w-[75%]" />
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Interactive Portal Content Area */}
-          <div className="p-6 sm:p-8">
-            {activeTab === "metrics" && (
-              <div className="space-y-6 animate-in fade-in duration-300">
-                {/* 4 Quick Metric Cards */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
-                      30-Day Blended ROAS
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-black text-[#FF5C28]">
-                      4.28x
-                    </span>
-                    <span className="text-[10px] text-emerald-500 font-bold block mt-1">
-                      ↑ +18.4% vs last period
-                    </span>
-                  </div>
+        {/* Bottom Text & CTA */}
+        <p className="mt-8 text-xs sm:text-sm text-gray-500 font-medium">
+          Track tasks, chat with your team, approve deliverables — all from one place.
+        </p>
 
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
-                      Gross Revenue (PKR)
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white">
-                      14.8M
-                    </span>
-                    <span className="text-[10px] text-emerald-500 font-bold block mt-1">
-                      ↑ Target met on Day 22
-                    </span>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
-                      Avg. Cost Per Order
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-black text-gray-900 dark:text-white">
-                      Rs. 620
-                    </span>
-                    <span className="text-[10px] text-emerald-500 font-bold block mt-1">
-                      ↓ -24% cheaper CPA
-                    </span>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">
-                      Active Ad Creatives
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-black text-purple-500">
-                      34 Live
-                    </span>
-                    <span className="text-[10px] text-gray-400 font-semibold block mt-1">
-                      6 new in A/B test
-                    </span>
-                  </div>
-                </div>
-
-                {/* Channel Breakdown Row */}
-                <div className="p-5 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                  <h4 className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider mb-4">
-                    Active Channel Allocations & Performance
-                  </h4>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between text-xs font-semibold mb-1">
-                        <span className="text-gray-800 dark:text-gray-200">
-                          Meta Advantage+ Catalog & UGC Reels
-                        </span>
-                        <span className="text-[#FF5C28] font-bold">4.4x ROAS (60% Budget)</span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden">
-                        <div className="h-full rounded-full bg-[#FF5C28]" style={{ width: "60%" }} />
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-xs font-semibold mb-1">
-                        <span className="text-gray-800 dark:text-gray-200">
-                          Google Performance Max & Brand Search
-                        </span>
-                        <span className="text-blue-500 font-bold">5.8x ROAS (25% Budget)</span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden">
-                        <div className="h-full rounded-full bg-blue-500" style={{ width: "25%" }} />
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-xs font-semibold mb-1">
-                        <span className="text-gray-800 dark:text-gray-200">
-                          TikTok Spark Ads & Creator Collaborations
-                        </span>
-                        <span className="text-pink-500 font-bold">3.2x ROAS (15% Budget)</span>
-                      </div>
-                      <div className="w-full h-2 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden">
-                        <div className="h-full rounded-full bg-pink-500" style={{ width: "15%" }} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "creatives" && (
-              <div className="space-y-4 animate-in fade-in duration-300">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-500 block mb-2">
-                      Stage 1: Scripting (3)
-                    </span>
-                    <div className="space-y-2 text-xs">
-                      <div className="p-2.5 rounded-xl bg-white dark:bg-[#11141C] border border-gray-200 dark:border-white/10 font-medium">
-                        Hook 01: &quot;Why Pakistan&apos;s dermatologists hate this...&quot;
-                      </div>
-                      <div className="p-2.5 rounded-xl bg-white dark:bg-[#11141C] border border-gray-200 dark:border-white/10 font-medium">
-                        Hook 02: &quot;Gym bag unboxing & 30-day challenge&quot;
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-500 block mb-2">
-                      Stage 2: In Production (4)
-                    </span>
-                    <div className="space-y-2 text-xs">
-                      <div className="p-2.5 rounded-xl bg-white dark:bg-[#11141C] border border-gray-200 dark:border-white/10 font-medium">
-                        UGC Creator Areeba shoot completed
-                      </div>
-                      <div className="p-2.5 rounded-xl bg-white dark:bg-[#11141C] border border-gray-200 dark:border-white/10 font-medium">
-                        High-speed studio macro product reel
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-500 block mb-2">
-                      Stage 3: Live & Scaling (6)
-                    </span>
-                    <div className="space-y-2 text-xs">
-                      <div className="p-2.5 rounded-xl bg-white dark:bg-[#11141C] border border-emerald-500/30 font-medium text-emerald-600 dark:text-emerald-400">
-                        Top Winner: &quot;Viral Problem-Agitate-Solve&quot; (4.9x ROAS)
-                      </div>
-                      <div className="p-2.5 rounded-xl bg-white dark:bg-[#11141C] border border-gray-200 dark:border-white/10 font-medium">
-                        COD Guarantee Trust Badge Ad
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "roadmap" && (
-              <div className="p-6 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 space-y-4 animate-in fade-in duration-300">
-                <div className="flex items-center gap-3 text-xs font-bold text-gray-700 dark:text-gray-300">
-                  <CheckCircle className="w-4 h-4 text-emerald-500" />
-                  <span>Phase 1: Brand Foundation & Tracking Pixel Infrastructure (Completed)</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-bold text-gray-700 dark:text-gray-300">
-                  <CheckCircle className="w-4 h-4 text-emerald-500" />
-                  <span>Phase 2: UGC Creative Testing Sprints & Cold Scaling (Active)</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-bold text-gray-500 dark:text-gray-400">
-                  <div className="w-4 h-4 rounded-full border-2 border-dashed border-gray-400" />
-                  <span>Phase 3: Omnichannel GCC / Dubai Expansion & Wholesale Wholesale Launch</span>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Bottom Security & Access Bar */}
-          <div className="px-6 py-4 bg-gray-50 dark:bg-white/5 border-t border-gray-200/80 dark:border-white/5 flex flex-wrap items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-            <div className="flex items-center gap-2">
-              <Lock className="w-3.5 h-3.5 text-emerald-500" />
-              <span>Encrypted 256-bit Agency Workspace · Direct Dedicated Slack & WhatsApp Channel</span>
-            </div>
-            <span className="font-bold text-[#FF5C28]">
-              Included Free for All Retainer Clients
-            </span>
-          </div>
+        <div className="mt-5">
+          <button
+            onClick={onOpenContact}
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-lg hover:shadow-[#FF5C28]/25"
+          >
+            <span>Experience It Live</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </section>

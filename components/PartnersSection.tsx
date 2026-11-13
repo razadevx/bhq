@@ -1,74 +1,137 @@
 "use client";
 
-import { Award, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Award, ArrowUpRight, ArrowRight, ShieldCheck, Star } from "lucide-react";
 
-const PARTNERS = [
-  {
-    name: "Google Premier Partner",
-    badge: "Top 3% in Pakistan",
-    desc: "Certified in Google Search, Performance Max, Display, and YouTube Video advertising.",
-    color: "from-blue-500 to-indigo-600",
-  },
-  {
-    name: "Shopify Partner Agency",
-    badge: "Official Development Experts",
-    desc: "Custom storefront architecture, liquid theme customization, and Shopify Plus checkout optimization.",
-    color: "from-emerald-500 to-teal-600",
-  },
-  {
-    name: "Meta Certified Company",
-    badge: "Media Buying & Creative",
-    desc: "Direct access to Meta agency account support, server-side CAPI integration, and beta ad formats.",
-    color: "from-[#FF5C28] to-pink-600",
-  },
-  {
-    name: "TikTok Marketing Partner",
-    badge: "Fast-Growing Video Ads",
-    desc: "High-velocity Spark Ads, creator licensing, and TikTok Shop conversion funnels.",
-    color: "from-purple-500 to-pink-500",
-  },
-];
+interface PartnersSectionProps {
+  onOpenContact?: () => void;
+}
 
-export default function PartnersSection() {
+export default function PartnersSection({ onOpenContact }: PartnersSectionProps) {
   return (
-    <section className="py-20 bg-white dark:bg-[#0B0C10] border-t border-gray-100 dark:border-white/5 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 mb-3">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#FF5C28]" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-              OFFICIAL ACCREDITATIONS
+    <section id="partners" className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Eyebrow Pill */}
+        <div className="mb-4">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+            CERTIFICATIONS
+          </span>
+        </div>
+
+        {/* Heading */}
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+            <span>Certified</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+              Partners
             </span>
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-gray-900 dark:text-white">
-            Certified Partner of the Platforms That Drive Modern Commerce
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PARTNERS.map((partner, index) => (
-            <div
-              key={index}
-              className="p-6 rounded-2xl bg-gray-50/70 dark:bg-[#161B26] border border-gray-200/80 dark:border-white/5 hover:border-[#FF5C28]/40 transition-all duration-300 group"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div
-                  className={`w-10 h-10 rounded-xl bg-gradient-to-tr ${partner.color} text-white flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform`}
-                >
-                  <Award className="w-5 h-5" />
+        {/* Side-by-side Dual Certified Partner Cards (Matching Page 3 & 4 of PDF) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Card 1: Google Premier Partner 2026 */}
+          <div className="p-8 sm:p-10 rounded-[2.5rem] bg-white border border-gray-200/90 shadow-xs hover:shadow-xl hover:border-blue-400/40 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              {/* Partner Brand Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-black text-gray-900 tracking-tight">
+                    <span className="text-blue-500">G</span>
+                    <span className="text-red-500">o</span>
+                    <span className="text-amber-500">o</span>
+                    <span className="text-blue-500">g</span>
+                    <span className="text-emerald-500">l</span>
+                    <span className="text-red-500">e</span>
+                  </span>
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white dark:bg-white/10 text-gray-600 dark:text-gray-300">
-                  {partner.badge}
-                </span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-[11px] font-bold text-blue-700">
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  <span>Premier Partner 2026</span>
+                </div>
               </div>
-              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">
-                {partner.name}
+
+              <h3 className="text-2xl font-black text-gray-900 mb-3">
+                Google Premier Partner 2026
               </h3>
-              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                {partner.desc}
+
+              <p className="text-sm text-gray-600 leading-relaxed font-normal mb-8">
+                As a Google Premier Partner, we are among the top 3% of Google Partners recognized for maximizing campaign success, driving client growth, and demonstrating advanced Google Ads expertise across the platform.
               </p>
+
+              {/* Tag Pills */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["Google Ads", "Analytics", "Search", "Display", "Performance Max"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          ))}
+
+            <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+              <button
+                onClick={onOpenContact}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors"
+              >
+                <span>View Certifications</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Card 2: Shopify Select Partner */}
+          <div className="p-8 sm:p-10 rounded-[2.5rem] bg-white border border-gray-200/90 shadow-xs hover:shadow-xl hover:border-emerald-400/40 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              {/* Partner Brand Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl font-black text-gray-900 tracking-tight flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-md bg-emerald-600 flex items-center justify-center text-white text-xs font-black">
+                      S
+                    </span>
+                    <span>SHOPIFY SELECT PARTNER</span>
+                  </span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/70 text-[11px] font-bold text-emerald-700">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Select Partner</span>
+                </div>
+              </div>
+
+              <h3 className="text-2xl font-black text-gray-900 mb-3">
+                Shopify Select Partner
+              </h3>
+
+              <p className="text-sm text-gray-600 leading-relaxed font-normal mb-8">
+                We build, customize, and optimize Shopify stores that convert visitors into loyal customers. From theme development to full custom storefronts, we make eCommerce extraordinary.
+              </p>
+
+              {/* Tag Pills */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                {["Store Setup", "Custom Themes", "App Integration", "CRO Optimization"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+              <button
+                onClick={onOpenContact}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors"
+              >
+                <span>Build Your Store</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

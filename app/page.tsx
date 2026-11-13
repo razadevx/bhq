@@ -3,19 +3,18 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
 import AboutSection from "@/components/AboutSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ServicesSection from "@/components/ServicesSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ClientPortalSection from "@/components/ClientPortalSection";
-import ProcessSection from "@/components/ProcessSection";
 import PartnersSection from "@/components/PartnersSection";
-import TeamSection from "@/components/TeamSection";
+import FlagshipPartnersSection from "@/components/FlagshipPartnersSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+import TeamSection from "@/components/TeamSection";
+import WallOfFameSection from "@/components/WallOfFameSection";
+import CEOSpotlightSection from "@/components/CEOSpotlightSection";
 import ContactSection from "@/components/ContactSection";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 
@@ -30,55 +29,52 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
-      {/* Sticky Navigation */}
+      {/* Sticky Capsule Navigation */}
       <Navbar onOpenContact={handleOpenContact} />
 
-      {/* Hero Section */}
+      {/* Hero Section (Preserved Exactly As Requested) */}
       <Hero onOpenContact={handleOpenContact} />
 
-      {/* 200+ Brand Logo Marquee */}
-      <Marquee />
-
-      {/* About & Core Values */}
+      {/* Page 1: About Us ("Ready to Grow?" + 5 Values + Dark Stats Banner) */}
       <AboutSection onOpenContact={() => handleOpenContact("General Strategy")} />
 
-      {/* The BHQ Difference / Why Choose Us */}
+      {/* Page 2: Why Choose Brands Headquarter (6 Bento Grid Cards) */}
       <WhyChooseUs />
 
-      {/* CRAFT / Services Section */}
+      {/* Page 2: Services That Drive Results (Watermark Cards & Controls) */}
       <ServicesSection onOpenContact={handleOpenContact} />
 
-      {/* Real Case Studies */}
-      <CaseStudiesSection onOpenContact={handleOpenContact} />
+      {/* Page 3: Client Portal ("Your Work. Your Control." - App Mockup) */}
+      <ClientPortalSection onOpenContact={() => handleOpenContact("Client Portal Demo")} />
 
-      {/* Proprietary Client Portal & Tech */}
-      <ClientPortalSection />
+      {/* Page 3 & 4: Certified Partners (Google Premier 2026 & Shopify Select) */}
+      <PartnersSection onOpenContact={() => handleOpenContact("Platform Partnership")} />
 
-      {/* 5-Step Process */}
-      <ProcessSection />
+      {/* Page 4 & 5: Our Flagship Partners (18 Brand Logo Cards) */}
+      <FlagshipPartnersSection />
 
-      {/* Official Certified Partners */}
-      <PartnersSection />
-
-      {/* Leadership & Growth Squad */}
-      <TeamSection />
-
-      {/* Verified Client Testimonials */}
+      {/* Page 5: Real Results, Real Growth (3 Stat Boxes & Reviews) */}
       <TestimonialsSection />
 
-      {/* Interactive FAQ with Schema */}
-      <FAQSection />
+      {/* Page 5 & 6: The Minds Behind the Magic (Founders & Team Heads) */}
+      <TeamSection />
 
-      {/* High-Impact CTA Banner */}
-      <CTASection onOpenContact={() => handleOpenContact("Scale Strategy Session")} />
+      {/* Page 6 & 7: Wall of Fame (5 Recognition Cards) */}
+      <WallOfFameSection />
 
-      {/* Full Contact Form & Office Details */}
+      {/* Page 7: Leadership with Purpose (CEO Spotlight - High-Contrast Dark Section) */}
+      <CEOSpotlightSection />
+
+      {/* Page 7 & 8: Let's Build Something Great (Contact Info + Intake Form) */}
       <ContactSection preselectedService={selectedService} />
 
-      {/* Multi-column Footer */}
+      {/* Page 8: Ready to Make It Happen? (High-Contrast Dark CTA Banner) */}
+      <CTASection onOpenContact={() => handleOpenContact("Scale Strategy Session")} />
+
+      {/* Page 8: Obsidian Dark Footer */}
       <Footer />
 
-      {/* Lead Capture Modal */}
+      {/* Quick Interactive Modal */}
       <ContactModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
