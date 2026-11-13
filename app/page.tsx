@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0B0C10] text-[#11141C] dark:text-[#F8FAFC] selection:bg-[#FF5C28] selection:text-white transition-colors duration-300">
+    <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
       {/* Sticky Navigation */}
       <Navbar onOpenContact={handleOpenContact} />
 
