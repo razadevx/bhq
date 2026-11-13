@@ -1,123 +1,101 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 interface HeroProps {
   onOpenContact: (service?: string) => void;
 }
 
-const SCALE_WORDS = ["8-Figure", "7-Figure", "Multi-Million"];
-
 export default function Hero({ onOpenContact }: HeroProps) {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [fade, setFade] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(true);
-      setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % SCALE_WORDS.length);
-        setFade(false);
-      }, 300);
-    }, 3200);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="hero"
-      className="relative h-[100dvh] min-h-[620px] max-h-[1080px] w-full flex flex-col justify-between overflow-hidden bg-[#070709] text-white selection:bg-[#FF5C28] selection:text-white"
+      className="relative h-[100dvh] min-h-[580px] max-h-[960px] flex flex-col justify-between items-center overflow-hidden bg-[#FAFAFC] dark:bg-[#08080A] text-[#11141C] dark:text-[#F8FAFC] transition-colors duration-500 pt-24 sm:pt-28 pb-3 sm:pb-4"
     >
-      {/* Cinematic Ambient Orange Radial Glow exactly matching reference */}
+      {/* Cinematic Ambient Glow - Optimized for both dark & light mode */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Warm bottom-center radial glow */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[850px] sm:w-[1100px] h-[480px] bg-gradient-to-t from-[#FF5C28]/20 via-[#FF5C28]/8 to-transparent rounded-full blur-[120px]" />
-        {/* Subtle upper glow */}
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#FF5C28]/10 rounded-full blur-[100px]" />
+        {/* Center Orange Radial Glow - exact match to reference image */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[320px] sm:h-[400px] bg-[#FF5C28]/15 dark:bg-[#FF5C28]/22 rounded-full blur-[90px] sm:blur-[120px] opacity-90 transition-opacity" />
+        
+        {/* Subtle Top Ember Warmth */}
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-[#FF8A65]/10 dark:bg-[#FF5C28]/12 rounded-full blur-[100px]" />
+
+        {/* Ambient Corner Accents */}
+        <div className="absolute top-1/3 -left-20 w-[350px] h-[350px] bg-[#FF5C28]/5 dark:bg-[#FF5C28]/8 rounded-full blur-[100px]" />
+        <div className="absolute top-1/3 -right-20 w-[350px] h-[350px] bg-[#FF5C28]/5 dark:bg-[#FF5C28]/8 rounded-full blur-[100px]" />
       </div>
 
-      {/* Top spacing to account for floating capsule navbar */}
-      <div className="pt-20 sm:pt-24 shrink-0" />
-
-      {/* Main Centered Hero Content - Perfectly Balanced in Laptop Viewport */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 max-w-5xl mx-auto w-full my-auto">
-        {/* Eyebrow Row with subtle dots */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 text-[11px] sm:text-xs text-gray-400 font-medium tracking-wide mb-2 sm:mb-3">
-          <span>Pakistan &amp; Nationwide</span>
-          <span className="text-gray-600">•</span>
-          <span>AI-Powered Strategy</span>
-          <span className="text-gray-600">•</span>
-          <span>Full-Service Agency</span>
-          <span className="text-gray-600">•</span>
-          <span>SEO · Ads · CRO · Branding</span>
+      {/* Main Centered Content - Scaled to fit laptop screen gracefully */}
+      <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10">
+        {/* Eyebrow Tagline with separators */}
+        <div className="mb-3 sm:mb-4">
+          <p className="text-[10px] sm:text-xs md:text-[13px] font-medium tracking-wide text-gray-500 dark:text-gray-400/90 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+            <span>Pakistan &amp; Nationwide</span>
+            <span className="opacity-40">•</span>
+            <span>Data-Driven Strategy</span>
+            <span className="opacity-40">•</span>
+            <span>Full-Service Agency</span>
+            <span className="opacity-40">•</span>
+            <span>SEO · Ads · Creative · Shopify</span>
+          </p>
         </div>
 
-        {/* Massive Centered Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-black tracking-tight leading-[1.04] text-white max-w-4xl mx-auto mb-3 md:mb-4">
-          <span className="block">The Agency</span>
-          <span className="block">
-            Behind{" "}
-            <span
-              className={`inline-block transition-all duration-300 ${
-                fade ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
-              }`}
-            >
-              {SCALE_WORDS[wordIndex]}
-            </span>
+        {/* Headline with aesthetic Light vs Heavy Font-Weight Contrast */}
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[4.65rem] tracking-tight leading-[1.06] text-center mb-3 sm:mb-4">
+          {/* Light Font-Weight Contrast */}
+          <span className="block font-light sm:font-normal text-gray-700 dark:text-[#EAEBED] tracking-[-0.03em]">
+            The Agency
           </span>
-          <span className="block text-[#FF5C28]">Brand Growth</span>
+          {/* Heavy Bold Font-Weight */}
+          <span className="block font-extrabold sm:font-black text-gray-900 dark:text-white tracking-[-0.035em] my-0.5 sm:my-1">
+            Behind 8-Figure
+          </span>
+          {/* Signature Vibrant Glowing Orange Line */}
+          <span className="block font-black text-[#FF5C28] tracking-[-0.025em] drop-shadow-[0_0_35px_rgba(255,92,40,0.30)] dark:drop-shadow-[0_0_50px_rgba(255,92,40,0.50)]">
+            Brand Growth
+          </span>
         </h1>
 
-        {/* Centered Subtitle */}
-        <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed mb-6 md:mb-7">
-          From search rankings to mobile checkouts — we run every channel, build
-          every system, and deliver every result. No juggling. No excuses. Just growth.
+        {/* Subtitle - Clean, readable, aesthetic */}
+        <p className="text-xs sm:text-sm md:text-base font-light text-gray-600 dark:text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-7">
+          From search rankings to ad screens — we run every channel, build every system, and deliver every result. No juggling. No excuses. Just growth.
         </p>
 
-        {/* Dual CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-3 w-full sm:w-auto">
-          {/* Glowing Orange Primary Button */}
+        {/* Centered Dual Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5 sm:mb-6">
           <button
-            onClick={() => onOpenContact("Free Strategy Call")}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-bold bg-[#FF5C28] hover:bg-[#e64a19] text-white transition-all duration-300 shadow-xl shadow-[#FF5C28]/35 hover:shadow-2xl hover:shadow-[#FF5C28]/55 hover:scale-[1.02]"
+            onClick={() => onOpenContact()}
+            className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-lg shadow-[#FF5C28]/35 hover:shadow-[#FF5C28]/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
           >
-            <span>Book a Free Strategy Call</span>
+            Book a Free Strategy Call
           </button>
-
-          {/* Glass Dark Secondary Button */}
           <a
             href="#case-studies"
-            className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 transition-all duration-300"
+            className="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm font-semibold bg-gray-100/90 dark:bg-white/5 border border-gray-300/80 dark:border-white/15 text-gray-800 dark:text-gray-200 hover:bg-gray-200/80 dark:hover:bg-white/10 hover:border-gray-400 dark:hover:border-white/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
           >
-            <span>See Our Results →</span>
+            See Our Results →
           </a>
         </div>
 
-        {/* Down indicator */}
-        <div className="pt-1">
-          <a
-            href="#trusted-by"
-            aria-label="Scroll to content"
-            className="inline-block p-1 text-gray-500 hover:text-white transition-colors animate-bounce"
-          >
-            <ChevronDown className="w-4 h-4" />
-          </a>
+        {/* Star Rating & Trust Line */}
+        <div className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+          <span className="text-[#FF5C28] tracking-tighter font-bold">★★★★★</span>
+          <span className="opacity-40">•</span>
+          <span>Lahore, Karachi &amp; Nationwide</span>
+          <span className="opacity-40">•</span>
+          <span>SEO · Paid Ads · CRM · AI Search · Full-Service Digital Marketing</span>
         </div>
       </div>
 
-      {/* Bottom Trust Line - Anchored at the bottom of the laptop viewport */}
-      <div className="relative z-10 pb-4 sm:pb-6 pt-2 shrink-0 border-t border-white/5 bg-gradient-to-t from-black/40 to-transparent">
-        <div className="max-w-5xl mx-auto px-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-[13px] text-gray-400 font-medium">
-          <span className="text-[#FF5C28] tracking-widest text-sm font-bold">★★★★★</span>
-          <span className="text-gray-600">•</span>
-          <span>Pakistan &amp; Nationwide</span>
-          <span className="text-gray-600">•</span>
-          <span>SEO · Paid Ads · Creative · Shopify</span>
-          <span className="text-gray-600">•</span>
-          <span>Full-service digital marketing</span>
-        </div>
+      {/* Subtle Bottom Scroll Indicator - Kept clean and compact */}
+      <div className="relative z-10 flex justify-center items-center pb-1">
+        <a
+          href="#trusted-by"
+          aria-label="Scroll down to trusted brands"
+          className="p-1.5 rounded-full text-gray-400 dark:text-gray-500 hover:text-[#FF5C28] transition-colors animate-bounce"
+        >
+          <ChevronDown className="w-4 h-4" />
+        </a>
       </div>
     </section>
   );
