@@ -17,7 +17,6 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ContactModal from "@/components/ContactModal";
 
 export default function Home() {
@@ -78,9 +77,6 @@ export default function Home() {
 
       {/* Multi-column Footer */}
       <Footer />
-
-      {/* Floating WhatsApp Quick Action */}
-      <FloatingWhatsApp />
 
       {/* Lead Capture Modal */}
       <ContactModal

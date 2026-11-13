@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -24,19 +25,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Col 1: Brand & Bio */}
           <div className="lg:col-span-4 space-y-5">
-            <Link href="#hero" className="inline-flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#FF5C28] to-[#FF8A65] p-0.5 flex items-center justify-center shadow-md">
-                <span className="text-white font-extrabold text-lg">B.</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
-                  brands
-                  <span className="w-2 h-2 rounded-full bg-[#FF5C28]" />
-                </span>
-                <span className="text-[10px] uppercase tracking-widest font-bold -mt-1 text-gray-400">
-                  Headquarter
-                </span>
-              </div>
+            <Link href="#hero" className="inline-flex items-center group">
+              <Image
+                src="/images/brands-headquarter-logo.png"
+                alt="Brands Headquarter"
+                width={180}
+                height={82}
+                className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              />
             </Link>
 
             <p className="text-sm text-gray-400 leading-relaxed max-w-sm">

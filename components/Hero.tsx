@@ -28,7 +28,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-[94vh] pt-28 pb-16 flex flex-col justify-between overflow-hidden bg-white dark:bg-[#0B0C10] transition-colors duration-300"
+      className="relative min-h-[95vh] pt-32 sm:pt-36 pb-16 flex flex-col justify-between overflow-hidden bg-white dark:bg-[#0B0C10] transition-colors duration-300"
     >
       {/* Ambient background meshes - soft pastel in light mode, deep ambient glow in dark mode */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
