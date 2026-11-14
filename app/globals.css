@@ -156,6 +156,21 @@ html.lenis, html.lenis body {
   }
 }
 
+/* Logo Shimmer Light Sweep for Preloader */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 1.8s ease-in-out infinite;
+  will-change: transform;
+}
+
 .animate-paper-1 {
   animation: paper-rotate-1 26s ease-in-out infinite;
   transform-origin: center center;

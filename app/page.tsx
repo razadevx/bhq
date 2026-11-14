@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Preloader from "@/components/Preloader";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -33,6 +34,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
+      {/* Aesthetic Brand Preloader with Logo Shimmer Animation */}
+      <Preloader />
+
       {/* High-Performance Smooth Inertial Scroll Engine (Lenis) */}
       <SmoothScroll />
 
