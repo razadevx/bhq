@@ -77,87 +77,67 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Moving Light Gradient Hero Background Keyframes */
-@keyframes hero-blob-1 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1) rotate(0deg);
-  }
-  33% {
-    transform: translate(60px, -45px) scale(1.12) rotate(12deg);
-  }
-  66% {
-    transform: translate(-40px, 35px) scale(0.92) rotate(-8deg);
-  }
-}
-
-@keyframes hero-blob-2 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1) rotate(0deg);
-  }
-  33% {
-    transform: translate(-55px, 45px) scale(0.92) rotate(-15deg);
-  }
-  66% {
-    transform: translate(50px, -35px) scale(1.1) rotate(10deg);
-  }
-}
-
-@keyframes hero-blob-3 {
+/* Ethereal Floating Gradient Mesh Animations */
+@keyframes float-slow-1 {
   0%, 100% {
     transform: translate(0px, 0px) scale(1);
   }
-  40% {
-    transform: translate(55px, 50px) scale(1.15);
+  33% {
+    transform: translate(35px, -30px) scale(1.08);
   }
-  75% {
-    transform: translate(-50px, -25px) scale(0.95);
+  66% {
+    transform: translate(-30px, 25px) scale(0.94);
   }
 }
 
-@keyframes hero-blob-4 {
+@keyframes float-slow-2 {
   0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.18;
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 35px) scale(1.06);
+  }
+  66% {
+    transform: translate(30px, -30px) scale(0.93);
+  }
+}
+
+@keyframes float-slow-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.28;
+    transform: translate(25px, 35px) scale(1.1);
   }
 }
 
-@keyframes hero-conic-spin {
-  0% {
-    transform: rotate(0deg) scale(1.1);
+@keyframes pulse-mesh {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
   }
   50% {
-    transform: rotate(180deg) scale(1.2);
-  }
-  100% {
-    transform: rotate(360deg) scale(1.1);
+    opacity: 0.88;
+    transform: scale(1.06);
   }
 }
 
-.animate-hero-blob-1 {
-  animation: hero-blob-1 18s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+.animate-float-1 {
+  animation: float-slow-1 18s ease-in-out infinite;
   will-change: transform;
 }
 
-.animate-hero-blob-2 {
-  animation: hero-blob-2 22s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+.animate-float-2 {
+  animation: float-slow-2 22s ease-in-out infinite;
   will-change: transform;
 }
 
-.animate-hero-blob-3 {
-  animation: hero-blob-3 26s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+.animate-float-3 {
+  animation: float-slow-3 16s ease-in-out infinite;
   will-change: transform;
 }
 
-.animate-hero-blob-4 {
-  animation: hero-blob-4 12s ease-in-out infinite;
+.animate-pulse-mesh {
+  animation: pulse-mesh 12s ease-in-out infinite;
   will-change: transform, opacity;
-}
-
-.animate-hero-conic {
-  animation: hero-conic-spin 50s linear infinite;
-  will-change: transform;
 }
