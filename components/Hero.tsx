@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 interface HeroProps {
   onOpenContact: (service?: string) => void;
@@ -16,200 +16,119 @@ const ROTATING_WORDS = [
   "Pure Growth",
 ];
 
-interface Particle {
-  x: number;
-  y: number;
-  radius: number;
-  vx: number;
-  vy: number;
-  alpha: number;
-  color: string;
-}
-
 export default function Hero({ onOpenContact }: HeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const paperStackRef = useRef<HTMLDivElement>(null);
+  const spotlightRef = useRef<HTMLDivElement>(null);
 
-  // Rotating typography state
+  // Rotating typography state (Only triggers re-render once every 2.6s - 0% lag)
   const [wordIndex, setWordIndex] = useState(0);
   const [fadeState, setFadeState] = useState<"in" | "out">("in");
 
-  // Smooth cursor tracking with physics interpolation
-  const [cursorPos, setCursorPos] = useState({ x: 500, y: 300 });
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
-  const targetCursor = useRef({ x: 500, y: 300 });
-  const targetTilt = useRef({ x: 0, y: 0 });
-
-  // Rotating word timer with smooth fade transition
   useEffect(() => {
     const interval = setInterval(() => {
       setFadeState("out");
       setTimeout(() => {
         setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
         setFadeState("in");
-      }, 200);
+      }, 180);
     }, 2600);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Cursor interpolation loop for smooth 3D tilt & spotlight
+  // High-performance 60/120fps mouse tracking via DIRECT DOM TRANSFORMS
+  // Completely bypasses React re-renders for buttery smooth 0% CPU overhead
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      targetCursor.current = {
-        x: window.innerWidth / 2,
-        y: window.innerHeight / 2.5,
-      };
-      setCursorPos(targetCursor.current);
-    }
+    const section = sectionRef.current;
+    if (!section) return;
 
-    let animationFrameId: number;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let isHovering = false;
+    let rafId: number;
 
-    const animateLoop = () => {
-      setCursorPos((prev) => {
-        const dx = targetCursor.current.x - prev.x;
-        const dy = targetCursor.current.y - prev.y;
-        return {
-          x: prev.x + dx * 0.08,
-          y: prev.y + dy * 0.08,
-        };
-      });
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = section.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-      setTilt((prev) => {
-        const dx = targetTilt.current.x - prev.x;
-        const dy = targetTilt.current.y - prev.y;
-        return {
-          x: prev.x + dx * 0.05,
-          y: prev.y + dy * 0.05,
-        };
-      });
+      mouseX = x;
+      mouseY = y;
 
-      animationFrameId = requestAnimationFrame(animateLoop);
+      // Subtle 3D perspective tilt (-7 to +7 degrees)
+      targetX = ((y / rect.height) - 0.5) * -12;
+      targetY = ((x / rect.width) - 0.5) * 12;
+
+      isHovering = true;
     };
 
-    animationFrameId = requestAnimationFrame(animateLoop);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
-
-  // Ambient canvas particles
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
-    let height = (canvas.height = canvas.parentElement?.clientHeight || window.innerHeight);
-
-    const handleResize = () => {
-      if (!canvas || !canvas.parentElement) return;
-      width = canvas.width = canvas.parentElement.clientWidth;
-      height = canvas.height = canvas.parentElement.clientHeight;
+    const handleMouseLeave = () => {
+      targetX = 0;
+      targetY = 0;
+      isHovering = false;
     };
-    window.addEventListener("resize", handleResize);
 
-    const colors = ["255, 92, 40", "236, 72, 153", "255, 175, 130"];
-    const particleCount = 18;
-    const particles: Particle[] = [];
+    // Render loop directly updating DOM style transforms (GPU Compositor Thread)
+    const updateTransforms = () => {
+      // Lerp for smooth easing
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: 1.2 + Math.random() * 2,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: -0.15 - Math.random() * 0.2,
-        alpha: 0.12 + Math.random() * 0.25,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      });
-    }
-
-    let particleAnimId: number;
-
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < -10) p.x = width + 10;
-        if (p.x > width + 10) p.x = -10;
-        if (p.y < -10) p.y = height + 10;
-        if (p.y > height + 10) p.y = -10;
-
-        ctx.save();
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-        ctx.shadowColor = `rgba(${p.color}, 0.3)`;
-        ctx.shadowBlur = p.radius * 3;
-        ctx.fill();
-        ctx.restore();
+      if (paperStackRef.current) {
+        paperStackRef.current.style.transform = `perspective(1200px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg)`;
       }
 
-      particleAnimId = requestAnimationFrame(render);
+      if (spotlightRef.current && isHovering) {
+        spotlightRef.current.style.transform = `translate3d(${mouseX - 275}px, ${mouseY - 275}px, 0)`;
+        spotlightRef.current.style.opacity = "0.75";
+      } else if (spotlightRef.current) {
+        spotlightRef.current.style.opacity = "0.45";
+      }
+
+      rafId = requestAnimationFrame(updateTransforms);
     };
 
-    particleAnimId = requestAnimationFrame(render);
+    section.addEventListener("mousemove", handleMouseMove, { passive: true });
+    section.addEventListener("mouseleave", handleMouseLeave, { passive: true });
+    rafId = requestAnimationFrame(updateTransforms);
 
     return () => {
-      cancelAnimationFrame(particleAnimId);
-      window.removeEventListener("resize", handleResize);
+      section.removeEventListener("mousemove", handleMouseMove);
+      section.removeEventListener("mouseleave", handleMouseLeave);
+      cancelAnimationFrame(rafId);
     };
   }, []);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (!sectionRef.current) return;
-    const rect = sectionRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    targetCursor.current = { x, y };
-
-    // Gentle 3D perspective tilt
-    const normX = ((x / rect.width) - 0.5) * 12;
-    const normY = ((y / rect.height) - 0.5) * -12;
-    targetTilt.current = { x: normY, y: normX };
-
-    if (!isHovered) setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    targetTilt.current = { x: 0, y: 0 };
-  };
 
   return (
     <section
       ref={sectionRef}
       id="hero"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      className="relative h-[100dvh] min-h-[580px] max-h-[920px] flex flex-col justify-between items-center overflow-hidden bg-[#FBFBFE] text-[#0F172A] pt-20 sm:pt-24 pb-4 select-none"
+      className="relative h-[100dvh] min-h-[580px] max-h-[920px] flex flex-col justify-between items-center overflow-hidden bg-[#FAF9F6] text-[#0F172A] pt-20 sm:pt-24 pb-4 select-none"
     >
       {/* ============================================================ */}
       {/* EXPANSIVE 3D PAPER LAYERING BACKGROUND ANIMATION             */}
-      {/* (Oversized so it NEVER cuts or bounds the typography)        */}
+      {/* (Hardware accelerated via GPU compositor for 60/120fps)      */}
       {/* ============================================================ */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
-        {/* Dynamic 3D Perspective Canvas */}
+        {/* Dynamic 3D Perspective Plane directly manipulated by GPU */}
         <div
-          className="relative w-full h-full flex items-center justify-center transition-transform duration-500 ease-out will-change-transform"
+          ref={paperStackRef}
+          className="relative w-full h-full flex items-center justify-center will-change-transform"
           style={{
-            transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
             transformStyle: "preserve-3d",
+            transform: "perspective(1200px) rotateX(0deg) rotateY(0deg)",
           }}
         >
-          {/* Layer 1: Ambient High-Contrast Coral & Pink Warm Aura */}
-          <div className="absolute w-[580px] sm:w-[840px] h-[380px] sm:h-[520px] bg-gradient-to-tr from-[#FF5C28]/18 via-[#FF8A65]/12 to-[#EC4899]/12 rounded-full blur-[110px] sm:blur-[150px] animate-float-1" />
+          {/* Layer 1: Ambient Warm Coral & Pink Glow Core */}
+          <div className="absolute w-[600px] sm:w-[850px] h-[380px] sm:h-[500px] bg-gradient-to-tr from-[#FF5C28]/18 via-[#FF8A65]/12 to-[#EC4899]/12 rounded-full blur-3xl animate-float-1" />
 
           {/* Layer 2: Rotating Outer Concentric Paper Orbit Ring */}
-          <div className="absolute w-[680px] sm:w-[920px] lg:w-[1100px] h-[680px] sm:h-[920px] lg:h-[1100px] rounded-full border border-dashed border-orange-300/40 animate-paper-round flex items-center justify-center">
+          <div className="absolute w-[680px] sm:w-[940px] lg:w-[1120px] h-[680px] sm:h-[940px] lg:h-[1120px] rounded-full border border-dashed border-orange-300/40 animate-paper-round flex items-center justify-center">
             {/* Orbiting Satellite Pins */}
             <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white shadow-md border border-orange-300 flex items-center justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28]" />
@@ -220,53 +139,53 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </div>
 
           {/* Layer 3: Rotating Inner Counter-Orbit Ring */}
-          <div className="absolute w-[480px] sm:w-[680px] lg:w-[820px] h-[480px] sm:h-[680px] lg:h-[820px] rounded-full border border-gray-200/60 animate-paper-round-reverse flex items-center justify-center">
+          <div className="absolute w-[480px] sm:w-[700px] lg:w-[840px] h-[480px] sm:h-[700px] lg:h-[840px] rounded-full border border-gray-300/40 animate-paper-round-reverse flex items-center justify-center">
             <div className="absolute top-1/4 right-0 w-3 h-3 rounded-full bg-[#FF5C28] opacity-60 shadow-xs" />
           </div>
 
-          {/* Layer 4: Expansive Primary Paper Layer (Oversized: 1200px wide, no cutoffs) */}
+          {/* Layer 4: Expansive Primary Paper Sheet (1280px wide - never boxes text) */}
           <div
-            className="absolute w-[800px] sm:w-[1080px] lg:w-[1260px] h-[480px] sm:h-[600px] lg:h-[680px] rounded-[48px] sm:rounded-[56px] bg-white/50 backdrop-blur-md border border-white/90 shadow-[0_30px_80px_-25px_rgba(255,92,40,0.08),0_12px_35px_rgba(0,0,0,0.03)] animate-paper-1"
+            className="absolute w-[820px] sm:w-[1100px] lg:w-[1280px] h-[480px] sm:h-[600px] lg:h-[680px] rounded-[52px] bg-white/55 backdrop-blur-md border border-white/90 shadow-[0_30px_70px_-20px_rgba(255,92,40,0.07),0_10px_30px_rgba(0,0,0,0.02)] animate-paper-1"
             style={{
-              transform: "translateZ(-50px)",
+              transform: "translateZ(-40px)",
             }}
           >
-            {/* Subtle paper watermark sheen */}
-            <div className="absolute top-6 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-            <div className="absolute bottom-6 left-8 right-8 h-px bg-gradient-to-r from-transparent via-orange-200/40 to-transparent" />
+            {/* Paper sheen accents */}
+            <div className="absolute top-6 left-10 right-10 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+            <div className="absolute bottom-6 left-10 right-10 h-px bg-gradient-to-r from-transparent via-orange-200/40 to-transparent" />
           </div>
 
-          {/* Layer 5: Expansive Secondary Paper Layer (Tilted opposite) */}
+          {/* Layer 5: Expansive Secondary Paper Sheet (Tilted opposite) */}
           <div
-            className="absolute w-[720px] sm:w-[980px] lg:w-[1140px] h-[420px] sm:h-[540px] lg:h-[620px] rounded-[42px] sm:rounded-[50px] bg-gradient-to-br from-white/45 via-orange-50/20 to-pink-50/20 backdrop-blur-sm border border-orange-200/30 shadow-[0_20px_50px_-15px_rgba(236,72,153,0.05)] animate-paper-2"
+            className="absolute w-[740px] sm:w-[1000px] lg:w-[1160px] h-[420px] sm:h-[540px] lg:h-[620px] rounded-[44px] bg-gradient-to-br from-white/45 via-orange-50/20 to-pink-50/20 backdrop-blur-xs border border-orange-200/30 shadow-[0_20px_50px_-15px_rgba(236,72,153,0.05)] animate-paper-2"
             style={{
-              transform: "translateZ(-90px)",
+              transform: "translateZ(-80px)",
             }}
           />
 
-          {/* Layer 6: Dynamic Cursor Radial Glow */}
+          {/* Layer 6: GPU-Accelerated Dynamic Cursor Follow Spotlight */}
           <div
-            className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
+            ref={spotlightRef}
+            className="absolute top-0 left-0 w-[550px] h-[550px] rounded-full pointer-events-none transition-opacity duration-500 will-change-transform"
             style={{
-              opacity: isHovered ? 0.9 : 0.55,
-              background: `radial-gradient(600px circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 92, 40, 0.16) 0%, rgba(236, 72, 153, 0.08) 35%, transparent 70%)`,
+              background: "radial-gradient(circle, rgba(255, 92, 40, 0.16) 0%, rgba(236, 72, 153, 0.08) 40%, transparent 70%)",
+              transform: "translate3d(500px, 200px, 0)",
             }}
           />
 
-          {/* Layer 7: Subtle Canvas Dust Particles */}
-          <canvas
-            ref={canvasRef}
-            className="absolute inset-0 w-full h-full pointer-events-none"
-          />
+          {/* Layer 7: GPU Floating Amber Motes (Pure CSS, 0% CPU JS overhead) */}
+          <div className="absolute w-2 h-2 rounded-full bg-[#FF5C28]/35 blur-[1px] top-1/4 left-1/5 animate-float-1" />
+          <div className="absolute w-2.5 h-2.5 rounded-full bg-[#EC4899]/30 blur-[1px] bottom-1/3 right-1/4 animate-float-2" />
+          <div className="absolute w-1.5 h-1.5 rounded-full bg-[#FFA07A]/40 top-1/2 right-1/6 animate-float-1" />
+          <div className="absolute w-2 h-2 rounded-full bg-[#FF5C28]/25 bottom-1/4 left-1/3 animate-float-2" />
         </div>
 
-        {/* Soft Vignette Softener */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.2)_0%,transparent_75%)] pointer-events-none" />
+        {/* Soft Radial Vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.15)_0%,transparent_75%)] pointer-events-none" />
       </div>
 
       {/* ============================================================ */}
       {/* HIGH-CONTRAST, UNIFORM 3-LINE HERO TYPOGRAPHY                */}
-      {/* (Never breaks into 4 or 5 lines; crisp readable contrast)   */}
       {/* ============================================================ */}
       <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10">
         {/* Eyebrow Pill */}
@@ -289,10 +208,10 @@ export default function Hero({ onOpenContact }: HeroProps) {
             in Pakistan for Brands That Demand
           </span>
 
-          {/* Line 3: Locked on ONE single line across all screens (No wrapping, no cutting!) */}
+          {/* Line 3: Locked on ONE single line across all screens */}
           <span className="block font-black tracking-[-0.03em]">
             <span
-              className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#FF6F3C] to-[#EC4899] drop-shadow-[0_0_25px_rgba(255,92,40,0.22)] transition-all duration-200 ease-out transform ${
+              className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#FF6F3C] to-[#EC4899] drop-shadow-[0_0_25px_rgba(255,92,40,0.20)] transition-all duration-180 ease-out transform ${
                 fadeState === "in"
                   ? "opacity-100 translate-y-0 filter-none"
                   : "opacity-0 -translate-y-2 blur-[2px]"
@@ -304,7 +223,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </span>
         </h1>
 
-        {/* Refined High-Contrast Subheadline */}
+        {/* High-Contrast Subheadline */}
         <p className="text-xs sm:text-sm md:text-base text-gray-600 font-normal max-w-xl mx-auto leading-relaxed mb-6 sm:mb-7">
           <span className="font-semibold text-gray-900">Likes don&apos;t pay salaries. Sales do.</span>{" "}
           Brands Headquarter builds the brand, makes the content, and runs the ads that turn customer attention into revenue.

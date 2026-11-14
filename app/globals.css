@@ -22,8 +22,6 @@
   }
 
   html {
-    scroll-behavior: smooth !important;
-    scroll-padding-top: 100px;
     font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
 
@@ -35,9 +33,30 @@
   }
 }
 
+/* Lenis Smooth Scroll Core Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -82,53 +101,40 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Floating Gradient Mesh Animations */
-@keyframes float-slow-1 {
+/* Hardware-Accelerated Keyframes using transform3d (GPU Only) */
+@keyframes float-ambient-1 {
   0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -25px) scale(1.05);
-  }
-  66% {
-    transform: translate(-25px, 20px) scale(0.96);
-  }
-}
-
-@keyframes float-slow-2 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(-30px, 25px) scale(1.04);
-  }
-  66% {
-    transform: translate(25px, -25px) scale(0.95);
-  }
-}
-
-/* Paper Layering Floating & Rotating Animations */
-@keyframes paper-rotate-1 {
-  0% {
-    transform: rotate(-7deg) translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: rotate(5deg) translate3d(18px, -15px, 0);
+    transform: translate3d(24px, -18px, 0);
   }
-  100% {
-    transform: rotate(-7deg) translate3d(0, 0, 0);
+}
+
+@keyframes float-ambient-2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-20px, 22px, 0);
+  }
+}
+
+@keyframes paper-rotate-1 {
+  0%, 100% {
+    transform: rotate(-6deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(4deg) translate3d(14px, -12px, 0);
   }
 }
 
 @keyframes paper-rotate-2 {
-  0% {
-    transform: rotate(8deg) translate3d(0, 0, 0);
+  0%, 100% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
   }
   50% {
-    transform: rotate(-6deg) translate3d(-15px, 18px, 0);
-  }
-  100% {
-    transform: rotate(8deg) translate3d(0, 0, 0);
+    transform: rotate(-5deg) translate3d(-12px, 14px, 0);
   }
 }
 
@@ -151,31 +157,35 @@
 }
 
 .animate-paper-1 {
-  animation: paper-rotate-1 24s ease-in-out infinite;
-  will-change: transform;
+  animation: paper-rotate-1 26s ease-in-out infinite;
+  transform-origin: center center;
+  backface-visibility: hidden;
 }
 
 .animate-paper-2 {
-  animation: paper-rotate-2 28s ease-in-out infinite;
-  will-change: transform;
+  animation: paper-rotate-2 30s ease-in-out infinite;
+  transform-origin: center center;
+  backface-visibility: hidden;
 }
 
 .animate-paper-round {
-  animation: paper-spin-round 75s linear infinite;
-  will-change: transform;
+  animation: paper-spin-round 80s linear infinite;
+  transform-origin: center center;
+  backface-visibility: hidden;
 }
 
 .animate-paper-round-reverse {
-  animation: paper-spin-round-reverse 90s linear infinite;
-  will-change: transform;
+  animation: paper-spin-round-reverse 95s linear infinite;
+  transform-origin: center center;
+  backface-visibility: hidden;
 }
 
 .animate-float-1 {
-  animation: float-slow-1 18s ease-in-out infinite;
-  will-change: transform;
+  animation: float-ambient-1 20s ease-in-out infinite;
+  backface-visibility: hidden;
 }
 
 .animate-float-2 {
-  animation: float-slow-2 22s ease-in-out infinite;
-  will-change: transform;
+  animation: float-ambient-2 24s ease-in-out infinite;
+  backface-visibility: hidden;
 }

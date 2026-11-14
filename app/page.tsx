@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FlagshipPartnersSection from "@/components/FlagshipPartnersSection";
@@ -30,68 +31,46 @@ export default function Home() {
     setModalOpen(true);
   };
 
-  // Global smooth scroll handler with sticky header offset
-  useEffect(() => {
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = (e.target as HTMLElement)?.closest("a");
-      if (!target) return;
-      const href = target.getAttribute("href");
-      if (href && href.startsWith("#") && href.length > 1) {
-        const el = document.querySelector(href);
-        if (el) {
-          e.preventDefault();
-          const targetY = el.getBoundingClientRect().top + window.pageYOffset - 90;
-          window.scrollTo({
-            top: targetY,
-            behavior: "smooth",
-          });
-          // Update URL hash without jumping
-          window.history.pushState(null, "", href);
-        }
-      }
-    };
-
-    document.addEventListener("click", handleAnchorClick);
-    return () => document.removeEventListener("click", handleAnchorClick);
-  }, []);
-
   return (
     <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
+      {/* High-Performance Smooth Inertial Scroll Engine (Lenis) */}
+      <SmoothScroll />
+
       {/* 1. Floating Capsule Round Navigation */}
       <Navbar onOpenContact={handleOpenContact} />
 
-      {/* 2. Hero Section (SEO Section 1: H1 + Dynamic Animating Word + Moving Particle Background + Laptop Fit) */}
+      {/* 2. Hero Section (High-Performance GPU Animated Paper Background + Uniform 3-Line H1) */}
       <Hero onOpenContact={handleOpenContact} />
 
-      {/* 3. Trusted By (SEO Section 2: Pakistan's Fastest-Growing Brands Already Trust Us) */}
+      {/* 3. Trusted By (Pakistan's Fastest-Growing Brands Already Trust Us) */}
       <FlagshipPartnersSection />
 
-      {/* 4. About Us (SEO Section 3: Not Another Marketing Agency. Your Growth Team.) */}
+      {/* 4. About Us (Not Another Marketing Agency. Your Growth Team.) */}
       <AboutSection onOpenContact={() => handleOpenContact("General Strategy")} />
 
-      {/* 5. Services (SEO Section 4: Digital Marketing Services That Pay for Themselves) */}
+      {/* 5. Services (Digital Marketing Services That Pay for Themselves) */}
       <ServicesSection onOpenContact={handleOpenContact} />
 
-      {/* 6. Why Brands Headquarter (SEO Section 5: We Don't Run Campaigns. We Build Growth Systems.) */}
+      {/* 6. Why Brands Headquarter (We Don't Run Campaigns. We Build Growth Systems.) */}
       <WhyChooseUs />
 
-      {/* 7. Our Process (SEO Section 6: From First Call to Full Scale in 5 Steps) */}
+      {/* 7. Our Process (From First Call to Full Scale in 5 Steps) */}
       <ProcessSection />
 
-      {/* 8. Case Studies (SEO Section 7: Real Brands. Real Numbers. Real Growth.) */}
+      {/* 8. Case Studies (Real Brands. Real Numbers. Real Growth.) */}
       <CaseStudiesSection onOpenContact={handleOpenContact} />
 
-      {/* 9. Industries (SEO Section 8: Marketing That Speaks Your Industry's Language) */}
+      {/* 9. Industries (Marketing That Speaks Your Industry's Language) */}
       <IndustriesSection onOpenContact={handleOpenContact} />
 
-      {/* 10. Testimonials (SEO Section 9: Don't Take Our Word for It) */}
+      {/* 10. Testimonials (Don't Take Our Word for It) */}
       <TestimonialsSection />
 
       {/* 11. Client Portal ("Your Work. Your Control." - Interactive App Mockup) */}
       <ClientPortalSection onOpenContact={() => handleOpenContact("Client Portal Demo")} />
 
       {/* 12. Certified Partners (Google Premier 2026 & Shopify Select Partner) */}
-      <PartnersSection onOpenContact={() => handleOpenContact("Platform Partnership")} />
+      <PartnersSection onOpenContact={handleOpenContact} />
 
       {/* 13. Wall of Fame (Awards & Industry Recognition) */}
       <WallOfFameSection />
@@ -99,16 +78,16 @@ export default function Home() {
       {/* 14. CEO Spotlight (Leadership with Purpose - High-Contrast Dark Section) */}
       <CEOSpotlightSection />
 
-      {/* 15. FAQ (SEO Section 11: Frequently Asked Questions + FAQPage Schema) */}
+      {/* 15. FAQ (Frequently Asked Questions + FAQPage Schema) */}
       <FAQSection />
 
       {/* 16. Contact Intake & Booking Form */}
       <ContactSection preselectedService={selectedService} />
 
-      {/* 17. Final CTA (SEO Section 10: Ready to Stop Guessing and Start Growing?) */}
+      {/* 17. Final CTA (Ready to Stop Guessing and Start Growing?) */}
       <CTASection onOpenContact={() => handleOpenContact("Growth Strategy Session")} />
 
-      {/* 18. Footer (SEO Section 12: Offices in Lahore, Karachi, Islamabad + Full Taglines) */}
+      {/* 18. Footer (Offices in Lahore, Karachi, Islamabad + Full Taglines) */}
       <Footer />
 
       {/* Interactive Contact & Audit Modal */}
