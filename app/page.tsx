@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FlagshipPartnersSection from "@/components/FlagshipPartnersSection";
@@ -30,12 +30,37 @@ export default function Home() {
     setModalOpen(true);
   };
 
+  // Global smooth scroll handler with sticky header offset
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement)?.closest("a");
+      if (!target) return;
+      const href = target.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const el = document.querySelector(href);
+        if (el) {
+          e.preventDefault();
+          const targetY = el.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({
+            top: targetY,
+            behavior: "smooth",
+          });
+          // Update URL hash without jumping
+          window.history.pushState(null, "", href);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+    return () => document.removeEventListener("click", handleAnchorClick);
+  }, []);
+
   return (
     <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
       {/* 1. Floating Capsule Round Navigation */}
       <Navbar onOpenContact={handleOpenContact} />
 
-      {/* 2. Hero Section (SEO Section 1: H1 + Moving Gradient Background + Laptop Fit) */}
+      {/* 2. Hero Section (SEO Section 1: H1 + Dynamic Animating Word + Moving Particle Background + Laptop Fit) */}
       <Hero onOpenContact={handleOpenContact} />
 
       {/* 3. Trusted By (SEO Section 2: Pakistan's Fastest-Growing Brands Already Trust Us) */}

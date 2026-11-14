@@ -24,6 +24,28 @@ export const metadata: Metadata = {
   authors: [{ name: "Brands Headquarter" }],
   creator: "Brands Headquarter",
   publisher: "Brands Headquarter",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/favicon/favicon.ico", sizes: "any" },
+      { url: "/images/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "android-chrome-192x192",
+        url: "/images/favicon/android-chrome-192x192.png",
+      },
+      {
+        rel: "android-chrome-512x512",
+        url: "/images/favicon/android-chrome-512x512.png",
+      },
+    ],
+  },
+  manifest: "/images/favicon/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_PK",
@@ -72,7 +94,7 @@ export default function RootLayout({
     name: "Brands Headquarter",
     alternateName: "BHQ",
     url: "https://brandsheadquarter.com",
-    logo: "https://brandsheadquarter.com/images/logo.png",
+    logo: "https://brandsheadquarter.com/images/brands-headquarter-logo-dark.png",
     description:
       "Full-service digital marketing agency in Pakistan helping ambitious brands scale through performance marketing, creative production, branding and technology.",
     address: {
@@ -91,7 +113,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Brands Headquarter",
-    image: "https://brandsheadquarter.com/images/logo.png",
+    image: "https://brandsheadquarter.com/images/brands-headquarter-logo-dark.png",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -125,7 +147,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/images/logo.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/images/favicon/site.webmanifest" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrg) }}
