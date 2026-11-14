@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 // Dynamically import the Dithering WebGL shader with SSR disabled for optimal performance
 const Dithering = dynamic(
@@ -54,26 +54,27 @@ export default function Hero({ onOpenContact }: HeroProps) {
     >
       {/* ============================================================ */}
       {/* PAPER-DESIGN DITHERING SHADER BACKGROUND ANIMATION           */}
+      {/* (Lightened opacity by 20% for optimal contrast & subtlety)   */}
       {/* ============================================================ */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
         {/* Soft Ambient Warm Glow under the shader */}
-        <div className="absolute w-[650px] sm:w-[900px] h-[400px] sm:h-[550px] bg-gradient-to-tr from-[#FF5C28]/15 via-[#FFA07A]/12 to-[#EC4899]/10 rounded-full blur-3xl animate-float-1" />
+        <div className="absolute w-[650px] sm:w-[900px] h-[400px] sm:h-[550px] bg-gradient-to-tr from-[#FF5C28]/10 via-[#FFA07A]/08 to-[#EC4899]/08 rounded-full blur-3xl animate-float-1" />
 
-        {/* Paper-Design Dithering WebGL Shader Canvas */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-40 sm:opacity-50 mix-blend-multiply transition-opacity duration-700">
+        {/* Paper-Design Dithering WebGL Shader Canvas - Lightened by 20% */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-20 sm:opacity-25 mix-blend-multiply transition-opacity duration-700">
           <Dithering
             colorBack="#00000000" // Fully transparent
             colorFront="#EC4E02"  // Brands Headquarter Signature Coral Orange Accent
             shape="warp"
             type="4x4"
-            speed={isHovered ? 0.5 : 0.2}
+            speed={isHovered ? 0.45 : 0.2}
             className="w-full h-full object-cover"
             minPixelRatio={1}
           />
         </div>
 
-        {/* Subtle Radial Vignette Softener (Provides high contrast around central text) */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_50%_48%,rgba(250,250,252,0.85)_0%,rgba(250,250,252,0.35)_60%,transparent_100%)] pointer-events-none" />
+        {/* Subtle Radial Vignette Softener (Provides clean contrast around central text) */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_75%_55%_at_50%_48%,rgba(250,250,252,0.85)_0%,rgba(250,250,252,0.25)_65%,transparent_100%)] pointer-events-none" />
       </div>
 
       {/* ============================================================ */}
@@ -100,7 +101,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
             in Pakistan for Brands That Demand
           </span>
 
-          {/* Line 3: Locked on ONE single line across all screens */}
+          {/* Line 3: Locked on ONE single line across all screens (No gap before comma) */}
           <span className="block font-black tracking-[-0.03em]">
             <span
               className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#FF6F3C] to-[#EC4899] drop-shadow-[0_0_25px_rgba(255,92,40,0.20)] transition-all duration-180 ease-out transform ${
@@ -108,10 +109,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
                   ? "opacity-100 translate-y-0 filter-none"
                   : "opacity-0 -translate-y-2 blur-[2px]"
               }`}
-            >
-              {ROTATING_WORDS[wordIndex]}
-            </span>
-            <span className="text-[#0F172A]">, Not Just Reach.</span>
+            >{ROTATING_WORDS[wordIndex]}</span><span className="text-[#0F172A]">, Not Just Reach.</span>
           </span>
         </h1>
 
