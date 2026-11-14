@@ -7,12 +7,13 @@ interface HeroProps {
   onOpenContact: (service?: string) => void;
 }
 
+// Consistent short words (7-11 characters) so line lengths stay perfectly uniform
 const ROTATING_WORDS = [
   "Revenue",
-  "8-Figure Scale",
   "High ROAS",
   "Real Profit",
-  "Market Dominance",
+  "Real Scale",
+  "Pure Growth",
 ];
 
 interface Particle {
@@ -48,8 +49,8 @@ export default function Hero({ onOpenContact }: HeroProps) {
       setTimeout(() => {
         setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
         setFadeState("in");
-      }, 240);
-    }, 2800);
+      }, 200);
+    }, 2600);
 
     return () => clearInterval(interval);
   }, []);
@@ -80,8 +81,8 @@ export default function Hero({ onOpenContact }: HeroProps) {
         const dx = targetTilt.current.x - prev.x;
         const dy = targetTilt.current.y - prev.y;
         return {
-          x: prev.x + dx * 0.06,
-          y: prev.y + dy * 0.06,
+          x: prev.x + dx * 0.05,
+          y: prev.y + dy * 0.05,
         };
       });
 
@@ -92,7 +93,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  // Ethereal ambient canvas particles
+  // Ambient canvas particles
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -109,18 +110,18 @@ export default function Hero({ onOpenContact }: HeroProps) {
     };
     window.addEventListener("resize", handleResize);
 
-    const colors = ["255, 92, 40", "236, 72, 153", "255, 180, 140"];
-    const particleCount = 22;
+    const colors = ["255, 92, 40", "236, 72, 153", "255, 175, 130"];
+    const particleCount = 18;
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: 1.2 + Math.random() * 2.2,
+        radius: 1.2 + Math.random() * 2,
         vx: (Math.random() - 0.5) * 0.25,
         vy: -0.15 - Math.random() * 0.2,
-        alpha: 0.12 + Math.random() * 0.28,
+        alpha: 0.12 + Math.random() * 0.25,
         color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
@@ -144,7 +145,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-        ctx.shadowColor = `rgba(${p.color}, 0.35)`;
+        ctx.shadowColor = `rgba(${p.color}, 0.3)`;
         ctx.shadowBlur = p.radius * 3;
         ctx.fill();
         ctx.restore();
@@ -169,9 +170,9 @@ export default function Hero({ onOpenContact }: HeroProps) {
 
     targetCursor.current = { x, y };
 
-    // 3D tilt values (-8 to +8 degrees)
-    const normX = ((x / rect.width) - 0.5) * 16;
-    const normY = ((y / rect.height) - 0.5) * -16;
+    // Gentle 3D perspective tilt
+    const normX = ((x / rect.width) - 0.5) * 12;
+    const normY = ((y / rect.height) - 0.5) * -12;
     targetTilt.current = { x: normY, y: normX };
 
     if (!isHovered) setIsHovered(true);
@@ -189,65 +190,66 @@ export default function Hero({ onOpenContact }: HeroProps) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="relative h-[100dvh] min-h-[580px] max-h-[920px] flex flex-col justify-between items-center overflow-hidden bg-[#FAFAFC] text-[#11141C] pt-20 sm:pt-24 pb-4 select-none perspective-[1200px]"
+      className="relative h-[100dvh] min-h-[580px] max-h-[920px] flex flex-col justify-between items-center overflow-hidden bg-[#FBFBFE] text-[#0F172A] pt-20 sm:pt-24 pb-4 select-none"
     >
       {/* ============================================================ */}
-      {/* PAPER LAYERING BACKGROUND THAT ROTATES & FLOATS              */}
+      {/* EXPANSIVE 3D PAPER LAYERING BACKGROUND ANIMATION             */}
+      {/* (Oversized so it NEVER cuts or bounds the typography)        */}
       {/* ============================================================ */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
-        {/* Dynamic Interactive 3D Perspective Plane */}
+        {/* Dynamic 3D Perspective Canvas */}
         <div
-          className="relative w-full h-full flex items-center justify-center transition-transform duration-300 ease-out will-change-transform"
+          className="relative w-full h-full flex items-center justify-center transition-transform duration-500 ease-out will-change-transform"
           style={{
-            transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+            transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
             transformStyle: "preserve-3d",
           }}
         >
-          {/* Layer 1: Ambient Warm Glow Core */}
-          <div className="absolute w-[500px] sm:w-[720px] h-[340px] sm:h-[460px] bg-gradient-to-tr from-[#FF5C28]/16 via-[#FF8A65]/12 to-[#EC4899]/10 rounded-full blur-[100px] sm:blur-[140px] animate-float-1 pointer-events-none" />
+          {/* Layer 1: Ambient High-Contrast Coral & Pink Warm Aura */}
+          <div className="absolute w-[580px] sm:w-[840px] h-[380px] sm:h-[520px] bg-gradient-to-tr from-[#FF5C28]/18 via-[#FF8A65]/12 to-[#EC4899]/12 rounded-full blur-[110px] sm:blur-[150px] animate-float-1" />
 
-          {/* Layer 2: Rotating Round Paper Disc 1 (Outer Orbital Ring) */}
-          <div className="absolute w-[540px] sm:w-[740px] md:w-[860px] h-[540px] sm:h-[740px] md:h-[860px] rounded-full border border-dashed border-orange-300/30 dark:border-orange-400/20 animate-paper-round flex items-center justify-center">
-            {/* Satellite paper pin */}
-            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white shadow-md border border-orange-200 flex items-center justify-center">
+          {/* Layer 2: Rotating Outer Concentric Paper Orbit Ring */}
+          <div className="absolute w-[680px] sm:w-[920px] lg:w-[1100px] h-[680px] sm:h-[920px] lg:h-[1100px] rounded-full border border-dashed border-orange-300/40 animate-paper-round flex items-center justify-center">
+            {/* Orbiting Satellite Pins */}
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white shadow-md border border-orange-300 flex items-center justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28]" />
             </div>
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white shadow-sm border border-pink-200" />
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white shadow-sm border border-pink-300 flex items-center justify-center">
+              <span className="w-1 h-1 rounded-full bg-[#EC4899]" />
+            </div>
           </div>
 
-          {/* Layer 3: Rotating Round Paper Disc 2 (Inner Counter-Rotating Orbit) */}
-          <div className="absolute w-[400px] sm:w-[560px] md:w-[660px] h-[400px] sm:h-[560px] md:h-[660px] rounded-full border border-gray-200/50 animate-paper-round-reverse flex items-center justify-center">
-            <div className="absolute top-1/4 right-0 w-3 h-3 rounded-full bg-gradient-to-tr from-[#FF5C28] to-[#EC4899] opacity-70 shadow-xs" />
+          {/* Layer 3: Rotating Inner Counter-Orbit Ring */}
+          <div className="absolute w-[480px] sm:w-[680px] lg:w-[820px] h-[480px] sm:h-[680px] lg:h-[820px] rounded-full border border-gray-200/60 animate-paper-round-reverse flex items-center justify-center">
+            <div className="absolute top-1/4 right-0 w-3 h-3 rounded-full bg-[#FF5C28] opacity-60 shadow-xs" />
           </div>
 
-          {/* Layer 4: Dimensional Paper Sheet 1 (Main Tilted Frosted Canvas Sheet) */}
+          {/* Layer 4: Expansive Primary Paper Layer (Oversized: 1200px wide, no cutoffs) */}
           <div
-            className="absolute w-[520px] sm:w-[700px] lg:w-[820px] h-[320px] sm:h-[400px] lg:h-[450px] rounded-[36px] sm:rounded-[44px] bg-white/45 backdrop-blur-md border border-white/80 shadow-[0_20px_50px_-15px_rgba(255,92,40,0.07),0_10px_25px_rgba(0,0,0,0.03)] animate-paper-1"
+            className="absolute w-[800px] sm:w-[1080px] lg:w-[1260px] h-[480px] sm:h-[600px] lg:h-[680px] rounded-[48px] sm:rounded-[56px] bg-white/50 backdrop-blur-md border border-white/90 shadow-[0_30px_80px_-25px_rgba(255,92,40,0.08),0_12px_35px_rgba(0,0,0,0.03)] animate-paper-1"
             style={{
-              transformStyle: "preserve-3d",
-              transform: "translateZ(-40px)",
+              transform: "translateZ(-50px)",
             }}
           >
-            {/* Subtle paper card corner accent line */}
-            <div className="absolute top-4 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-            <div className="absolute bottom-4 left-6 right-6 h-px bg-gradient-to-r from-transparent via-orange-200/30 to-transparent" />
+            {/* Subtle paper watermark sheen */}
+            <div className="absolute top-6 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+            <div className="absolute bottom-6 left-8 right-8 h-px bg-gradient-to-r from-transparent via-orange-200/40 to-transparent" />
           </div>
 
-          {/* Layer 5: Dimensional Paper Sheet 2 (Secondary Tilted Accent Sheet) */}
+          {/* Layer 5: Expansive Secondary Paper Layer (Tilted opposite) */}
           <div
-            className="absolute w-[440px] sm:w-[600px] lg:w-[720px] h-[280px] sm:h-[350px] lg:h-[390px] rounded-[32px] sm:rounded-[40px] bg-gradient-to-br from-white/40 via-orange-50/20 to-pink-50/20 backdrop-blur-sm border border-orange-200/35 shadow-[0_15px_35px_-10px_rgba(236,72,153,0.06)] animate-paper-2"
+            className="absolute w-[720px] sm:w-[980px] lg:w-[1140px] h-[420px] sm:h-[540px] lg:h-[620px] rounded-[42px] sm:rounded-[50px] bg-gradient-to-br from-white/45 via-orange-50/20 to-pink-50/20 backdrop-blur-sm border border-orange-200/30 shadow-[0_20px_50px_-15px_rgba(236,72,153,0.05)] animate-paper-2"
             style={{
-              transformStyle: "preserve-3d",
-              transform: "translateZ(-80px)",
+              transform: "translateZ(-90px)",
             }}
           />
 
-          {/* Layer 6: Dynamic Cursor Spotlight */}
+          {/* Layer 6: Dynamic Cursor Radial Glow */}
           <div
             className="absolute inset-0 transition-opacity duration-700 pointer-events-none"
             style={{
-              opacity: isHovered ? 0.85 : 0.5,
-              background: `radial-gradient(550px circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 92, 40, 0.15) 0%, rgba(236, 72, 153, 0.08) 35%, transparent 70%)`,
+              opacity: isHovered ? 0.9 : 0.55,
+              background: `radial-gradient(600px circle at ${cursorPos.x}px ${cursorPos.y}px, rgba(255, 92, 40, 0.16) 0%, rgba(236, 72, 153, 0.08) 35%, transparent 70%)`,
             }}
           />
 
@@ -259,37 +261,38 @@ export default function Hero({ onOpenContact }: HeroProps) {
         </div>
 
         {/* Soft Vignette Softener */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.3)_0%,transparent_75%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,rgba(255,255,255,0.2)_0%,transparent_75%)] pointer-events-none" />
       </div>
 
       {/* ============================================================ */}
-      {/* CENTERED HERO CONTENT - BALANCED, MODERATE & IMPACTFUL       */}
+      {/* HIGH-CONTRAST, UNIFORM 3-LINE HERO TYPOGRAPHY                */}
+      {/* (Never breaks into 4 or 5 lines; crisp readable contrast)   */}
       {/* ============================================================ */}
       <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4 sm:mb-5">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-gray-700 bg-white/85 border border-gray-200/90 shadow-2xs backdrop-blur-md">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-gray-800 bg-white/90 border border-gray-200/90 shadow-2xs backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28] animate-pulse" />
             STRATEGY · CREATIVE · PERFORMANCE
           </span>
         </div>
 
-        {/* Moderate, Authoritative 3-Line H1 Typography */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] tracking-tight leading-[1.12] text-center mb-4 sm:mb-5 max-w-4xl">
+        {/* Precise, Uniform 3-Line H1 Typography */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] tracking-tight leading-[1.14] text-center mb-4 sm:mb-5 max-w-4xl text-[#0F172A]">
           {/* Line 1: Lightweight clean aesthetic */}
-          <span className="block font-light text-gray-700 tracking-[-0.03em]">
+          <span className="block font-light text-gray-700 tracking-[-0.025em]">
             The Digital Marketing Agency
           </span>
 
-          {/* Line 2: Bold contrasting foundation */}
-          <span className="block font-extrabold sm:font-black text-gray-900 tracking-[-0.035em] my-1">
-            in Pakistan for Brands That Want
+          {/* Line 2: Bold contrasting punchline */}
+          <span className="block font-black text-[#0F172A] tracking-[-0.03em] my-1">
+            in Pakistan for Brands That Demand
           </span>
 
-          {/* Line 3: Seamless Rotating Word + Accent ending on one line */}
-          <span className="inline-flex items-center justify-center flex-wrap gap-x-2 tracking-[-0.03em]">
+          {/* Line 3: Locked on ONE single line across all screens (No wrapping, no cutting!) */}
+          <span className="block font-black tracking-[-0.03em]">
             <span
-              className={`inline-block font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#FF6F3C] to-[#EC4899] drop-shadow-[0_0_30px_rgba(255,92,40,0.25)] transition-all duration-240 ease-out transform ${
+              className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#FF6F3C] to-[#EC4899] drop-shadow-[0_0_25px_rgba(255,92,40,0.22)] transition-all duration-200 ease-out transform ${
                 fadeState === "in"
                   ? "opacity-100 translate-y-0 filter-none"
                   : "opacity-0 -translate-y-2 blur-[2px]"
@@ -297,13 +300,11 @@ export default function Hero({ onOpenContact }: HeroProps) {
             >
               {ROTATING_WORDS[wordIndex]}
             </span>
-            <span className="font-extrabold sm:font-black text-gray-900">
-              , Not Just Reach.
-            </span>
+            <span className="text-[#0F172A]">, Not Just Reach.</span>
           </span>
         </h1>
 
-        {/* Refined, Concise Subheadline */}
+        {/* Refined High-Contrast Subheadline */}
         <p className="text-xs sm:text-sm md:text-base text-gray-600 font-normal max-w-xl mx-auto leading-relaxed mb-6 sm:mb-7">
           <span className="font-semibold text-gray-900">Likes don&apos;t pay salaries. Sales do.</span>{" "}
           Brands Headquarter builds the brand, makes the content, and runs the ads that turn customer attention into revenue.
@@ -319,19 +320,19 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </button>
           <a
             href="#case-studies"
-            className="inline-flex items-center justify-center px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/90 backdrop-blur-md border border-gray-300/90 text-gray-800 hover:bg-white hover:border-gray-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xs"
+            className="inline-flex items-center justify-center px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/95 backdrop-blur-md border border-gray-300/90 text-gray-800 hover:bg-white hover:border-gray-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xs"
           >
             See the Results →
           </a>
         </div>
 
-        {/* Minimal Social Proof Trust Line */}
-        <div className="text-[10px] sm:text-xs text-gray-500 font-medium tracking-wide flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+        {/* High-Contrast Trust Line */}
+        <div className="text-[10px] sm:text-xs text-gray-600 font-medium tracking-wide flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           <span className="text-[#FF5C28] font-bold">★★★★★</span>
-          <span className="font-semibold text-gray-700">200+ brands scaled</span>
-          <span className="opacity-30">•</span>
-          <span className="font-semibold text-gray-700">PKR 500M+ ad spend</span>
-          <span className="opacity-30">•</span>
+          <span className="font-bold text-gray-900">200+ brands scaled</span>
+          <span className="opacity-40">•</span>
+          <span className="font-bold text-gray-900">PKR 500M+ ad spend</span>
+          <span className="opacity-40">•</span>
           <span>Lahore · Karachi · Islamabad</span>
         </div>
       </div>
