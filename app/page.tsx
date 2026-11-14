@@ -3,16 +3,19 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import FlagshipPartnersSection from "@/components/FlagshipPartnersSection";
 import AboutSection from "@/components/AboutSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import ServicesSection from "@/components/ServicesSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import ProcessSection from "@/components/ProcessSection";
+import CaseStudiesSection from "@/components/CaseStudiesSection";
+import IndustriesSection from "@/components/IndustriesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ClientPortalSection from "@/components/ClientPortalSection";
 import PartnersSection from "@/components/PartnersSection";
-import FlagshipPartnersSection from "@/components/FlagshipPartnersSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import TeamSection from "@/components/TeamSection";
 import WallOfFameSection from "@/components/WallOfFameSection";
 import CEOSpotlightSection from "@/components/CEOSpotlightSection";
+import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -29,52 +32,61 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
-      {/* Sticky Capsule Navigation */}
+      {/* 1. Floating Capsule Round Navigation */}
       <Navbar onOpenContact={handleOpenContact} />
 
-      {/* Hero Section (Preserved Exactly As Requested) */}
+      {/* 2. Hero Section (SEO Section 1: H1 + Moving Gradient Background + Laptop Fit) */}
       <Hero onOpenContact={handleOpenContact} />
 
-      {/* Page 1: About Us ("Ready to Grow?" + 5 Values + Dark Stats Banner) */}
-      <AboutSection onOpenContact={() => handleOpenContact("General Strategy")} />
-
-      {/* Page 2: Why Choose Brands Headquarter (6 Bento Grid Cards) */}
-      <WhyChooseUs />
-
-      {/* Page 2: Services That Drive Results (Watermark Cards & Controls) */}
-      <ServicesSection onOpenContact={handleOpenContact} />
-
-      {/* Page 3: Client Portal ("Your Work. Your Control." - App Mockup) */}
-      <ClientPortalSection onOpenContact={() => handleOpenContact("Client Portal Demo")} />
-
-      {/* Page 3 & 4: Certified Partners (Google Premier 2026 & Shopify Select) */}
-      <PartnersSection onOpenContact={() => handleOpenContact("Platform Partnership")} />
-
-      {/* Page 4 & 5: Our Flagship Partners (18 Brand Logo Cards) */}
+      {/* 3. Trusted By (SEO Section 2: Pakistan's Fastest-Growing Brands Already Trust Us) */}
       <FlagshipPartnersSection />
 
-      {/* Page 5: Real Results, Real Growth (3 Stat Boxes & Reviews) */}
+      {/* 4. About Us (SEO Section 3: Not Another Marketing Agency. Your Growth Team.) */}
+      <AboutSection onOpenContact={() => handleOpenContact("General Strategy")} />
+
+      {/* 5. Services (SEO Section 4: Digital Marketing Services That Pay for Themselves) */}
+      <ServicesSection onOpenContact={handleOpenContact} />
+
+      {/* 6. Why Brands Headquarter (SEO Section 5: We Don't Run Campaigns. We Build Growth Systems.) */}
+      <WhyChooseUs />
+
+      {/* 7. Our Process (SEO Section 6: From First Call to Full Scale in 5 Steps) */}
+      <ProcessSection />
+
+      {/* 8. Case Studies (SEO Section 7: Real Brands. Real Numbers. Real Growth.) */}
+      <CaseStudiesSection onOpenContact={handleOpenContact} />
+
+      {/* 9. Industries (SEO Section 8: Marketing That Speaks Your Industry's Language) */}
+      <IndustriesSection onOpenContact={handleOpenContact} />
+
+      {/* 10. Testimonials (SEO Section 9: Don't Take Our Word for It) */}
       <TestimonialsSection />
 
-      {/* Page 5 & 6: The Minds Behind the Magic (Founders & Team Heads) */}
-      <TeamSection />
+      {/* 11. Client Portal ("Your Work. Your Control." - Interactive App Mockup) */}
+      <ClientPortalSection onOpenContact={() => handleOpenContact("Client Portal Demo")} />
 
-      {/* Page 6 & 7: Wall of Fame (5 Recognition Cards) */}
+      {/* 12. Certified Partners (Google Premier 2026 & Shopify Select Partner) */}
+      <PartnersSection onOpenContact={() => handleOpenContact("Platform Partnership")} />
+
+      {/* 13. Wall of Fame (Awards & Industry Recognition) */}
       <WallOfFameSection />
 
-      {/* Page 7: Leadership with Purpose (CEO Spotlight - High-Contrast Dark Section) */}
+      {/* 14. CEO Spotlight (Leadership with Purpose - High-Contrast Dark Section) */}
       <CEOSpotlightSection />
 
-      {/* Page 7 & 8: Let's Build Something Great (Contact Info + Intake Form) */}
+      {/* 15. FAQ (SEO Section 11: Frequently Asked Questions + FAQPage Schema) */}
+      <FAQSection />
+
+      {/* 16. Contact Intake & Booking Form */}
       <ContactSection preselectedService={selectedService} />
 
-      {/* Page 8: Ready to Make It Happen? (High-Contrast Dark CTA Banner) */}
-      <CTASection onOpenContact={() => handleOpenContact("Scale Strategy Session")} />
+      {/* 17. Final CTA (SEO Section 10: Ready to Stop Guessing and Start Growing?) */}
+      <CTASection onOpenContact={() => handleOpenContact("Growth Strategy Session")} />
 
-      {/* Page 8: Obsidian Dark Footer */}
+      {/* 18. Footer (SEO Section 12: Offices in Lahore, Karachi, Islamabad + Full Taglines) */}
       <Footer />
 
-      {/* Quick Interactive Modal */}
+      {/* Interactive Contact & Audit Modal */}
       <ContactModal
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

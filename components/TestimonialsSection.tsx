@@ -1,42 +1,54 @@
 "use client";
 
 import { useState } from "react";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Quote, ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const STATS = [
-  { value: "PKR 500M+", label: "Revenue generated for brands" },
-  { value: "98%", label: "Client retention rate" },
-  { value: "45+", label: "Industries served" },
+  { value: "PKR 500M+", label: "Managed Ad Spend for Brands" },
+  { value: "4.1x", label: "Peak Blended ROAS Achieved" },
+  { value: "200+", label: "Brands Scaled Nationwide" },
 ];
 
 const REVIEWS = [
   {
     quote:
-      "I made a design for my hair oil with Brands Headquarter and they really did a great job, staff was so cooperative, unlike others they take the smallest of your work so serious, my experience was really good with them.",
+      "Brands Headquarter took Atomic Muscles from an ad fatigue plateau to 4.1x ROAS within 90 days. Their UGC scripts and rapid creative testing completely changed our unit economics.",
     author: "Azan Khan",
     role: "Brand Director",
-    company: "Atomic Care",
+    company: "Atomic Care & Nutrition",
+    result: "4.1x ROAS in 90 Days",
   },
   {
     quote:
-      "I had a great experience with Brands Headquarter. Their team was professional, responsive, and really understood what I wanted. I got my brand identity designed by them, and it's turning out great. Definitely recommended!!",
-    author: "Ar. Khizra Anjum Saleemi",
-    role: "Architect & Founder",
-    company: "KAS Living",
-  },
-  {
-    quote:
-      "I had a great experience working with Brands Headquarter on my Shopify website development and Meta Ads. The team was professional, responsive, and understood exactly what I wanted for my brand. They built my store with zero friction.",
-    author: "Hassan Bin Ali",
-    role: "Founder",
-    company: "Mezuha Official",
-  },
-  {
-    quote:
-      "The Black Friday scale campaign executed by Brands Headquarter generated record sales while keeping our blended ROAS above 4.2x. Their live communication and dedicated squad make scaling effortless.",
+      "Working with Brands Headquarter transformed our online orders. They redesigned our Shopify store for mobile conversions and scaled our Meta Advantage+ campaigns to 2x monthly volume without burning budget.",
     author: "Hamza Tariq",
     role: "Managing Director",
     company: "Tebeena Wears",
+    result: "2x Monthly Orders",
+  },
+  {
+    quote:
+      "Their in-house UGC team shot transformation reels and dermatologist reviews that lowered our customer acquisition cost (CPA) by 38%. The transparency in reporting is unmatched.",
+    author: "Ashraf Rehman",
+    role: "Founder & CEO",
+    company: "Ashraf Naturals",
+    result: "38% Lower CPA",
+  },
+  {
+    quote:
+      "I got our brand identity and digital packaging designed by Brands Headquarter. They take the smallest details seriously and build aesthetics that genuinely resonate with high-end buyers.",
+    author: "Ar. Khizra Anjum Saleemi",
+    role: "Principal Architect & Founder",
+    company: "KAS Living",
+    result: "Full Brand Identity",
+  },
+  {
+    quote:
+      "From Shopify storefront optimization to multi-channel ad scaling, Brands Headquarter works as an integrated extension of our team. Fast turnaround and zero finger-pointing.",
+    author: "Hassan Bin Ali",
+    role: "Founder",
+    company: "Mezuha Official",
+    result: "Seamless Store Scale",
   },
 ];
 
@@ -47,106 +59,97 @@ export default function TestimonialsSection() {
   const next = () => setIndex((i) => (i < REVIEWS.length - 1 ? i + 1 : 0));
 
   return (
-    <section id="case-studies" className="py-24 bg-white relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Eyebrow Pill */}
+        {/* Eyebrow Pill (Exact from PDF Page 6) */}
         <div className="mb-4">
           <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
-            CLIENT REVIEWS
+            CLIENT STORIES
           </span>
         </div>
 
-        {/* Heading */}
-        <div className="max-w-3xl mb-14">
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
-            <span>Real Results,</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
-              Real Growth
-            </span>
-          </h2>
+        {/* Heading & Subtitle Grid */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+              <span>Don&apos;t Take</span>{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+                Our Word for It
+              </span>
+            </h2>
+            <p className="mt-4 text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
+              The best proof isn&apos;t what we say about ourselves — it&apos;s what our clients say after working with us.
+            </p>
+          </div>
+
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-700 hover:text-[#FF5C28] transition-colors self-start md:self-end"
+          >
+            <span>Verified 5.0 Star Google Reviews</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
 
-        {/* 3 Top Stat Boxes (Matching Page 5 of PDF) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* 3 Top Stat Boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mb-16">
           {STATS.map((stat, i) => (
             <div
               key={i}
-              className="p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#FF5C28]/40 transition-colors"
+              className="p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#FF5C28]/40 hover:shadow-lg transition-all"
             >
-              <div className="text-4xl sm:text-5xl font-black text-[#FF5C28] tracking-tight mb-2">
+              <div className="text-3xl sm:text-4xl font-black text-[#FF5C28] tracking-tight mb-1.5">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-medium text-gray-500">
+              <div className="text-xs sm:text-sm font-medium text-gray-600">
                 {stat.label}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Carousel Arrow Controls */}
-        <div className="flex justify-end gap-2 mb-6">
-          <button
-            onClick={prev}
-            aria-label="Previous review"
-            className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:border-gray-400 flex items-center justify-center text-gray-700 shadow-xs transition-colors"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <button
-            onClick={next}
-            aria-label="Next review"
-            className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:border-gray-400 flex items-center justify-center text-gray-700 shadow-xs transition-colors"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* 3 Review Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* Testimonials Carousel & Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {REVIEWS.slice(0, 3).map((rev, i) => (
             <div
               key={i}
-              className="p-8 sm:p-9 rounded-[2rem] bg-white border border-gray-200/90 shadow-xs hover:shadow-lg hover:border-[#FF5C28]/40 transition-all duration-300 flex flex-col justify-between"
+              className="p-8 rounded-3xl bg-gray-50/70 border border-gray-200/80 hover:bg-white hover:border-[#FF5C28]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Yellow/Orange Quote Icon */}
-                <div className="text-amber-400 mb-4 opacity-75">
-                  <Quote className="w-7 h-7" />
+                {/* Stars and Result Tag */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex gap-1 text-[#FF5C28]">
+                    {[...Array(5)].map((_, s) => (
+                      <Star key={s} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-orange-50 text-[#FF5C28] border border-orange-100">
+                    {rev.result}
+                  </span>
                 </div>
 
-                <p className="text-sm text-gray-600 leading-relaxed font-normal mb-8">
+                <Quote className="w-8 h-8 text-gray-200 mb-3" />
+                <p className="text-xs sm:text-sm text-gray-700 leading-relaxed italic mb-6">
                   &ldquo;{rev.quote}&rdquo;
                 </p>
               </div>
 
-              <div>
-                {/* 5 Yellow Stars */}
-                <div className="flex items-center gap-1 text-amber-400 mb-3">
-                  {[...Array(5)].map((_, s) => (
-                    <Star key={s} className="w-4 h-4 fill-amber-400" />
-                  ))}
+              <div className="pt-4 border-t border-gray-200/60 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#FF5C28] to-[#EC4899] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                  {rev.author.charAt(0)}
                 </div>
-
-                <h4 className="text-base font-bold text-gray-900">
-                  {rev.author}
-                </h4>
-                <p className="text-xs text-gray-400 font-medium mt-0.5">
-                  {rev.role}, {rev.company}
-                </p>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-gray-900 leading-tight">
+                    {rev.author}
+                  </h4>
+                  <p className="text-[11px] text-gray-500 font-medium">
+                    {rev.role} · <span className="text-gray-700 font-semibold">{rev.company}</span>
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Indicator Dots */}
-        <div className="flex justify-center items-center gap-1.5 pt-4">
-          {[0, 1, 2, 3, 4].map((dot) => (
-            <span
-              key={dot}
-              className={`h-1.5 rounded-full transition-all ${
-                dot === 2 ? "w-6 bg-amber-400" : "w-1.5 bg-gray-200"
-              }`}
-            />
           ))}
         </div>
       </div>
