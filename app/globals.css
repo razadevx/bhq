@@ -82,16 +82,16 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Ethereal Floating Gradient Mesh Animations */
+/* Floating Gradient Mesh Animations */
 @keyframes float-slow-1 {
   0%, 100% {
     transform: translate(0px, 0px) scale(1);
   }
   33% {
-    transform: translate(35px, -30px) scale(1.08);
+    transform: translate(30px, -25px) scale(1.05);
   }
   66% {
-    transform: translate(-30px, 25px) scale(0.94);
+    transform: translate(-25px, 20px) scale(0.96);
   }
 }
 
@@ -100,31 +100,74 @@
     transform: translate(0px, 0px) scale(1);
   }
   33% {
-    transform: translate(-40px, 35px) scale(1.06);
+    transform: translate(-30px, 25px) scale(1.04);
   }
   66% {
-    transform: translate(30px, -30px) scale(0.93);
+    transform: translate(25px, -25px) scale(0.95);
   }
 }
 
-@keyframes float-slow-3 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
+/* Paper Layering Floating & Rotating Animations */
+@keyframes paper-rotate-1 {
+  0% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
   }
   50% {
-    transform: translate(25px, 35px) scale(1.1);
+    transform: rotate(5deg) translate3d(18px, -15px, 0);
+  }
+  100% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
   }
 }
 
-@keyframes pulse-mesh {
-  0%, 100% {
-    opacity: 0.65;
-    transform: scale(1);
+@keyframes paper-rotate-2 {
+  0% {
+    transform: rotate(8deg) translate3d(0, 0, 0);
   }
   50% {
-    opacity: 0.9;
-    transform: scale(1.06);
+    transform: rotate(-6deg) translate3d(-15px, 18px, 0);
   }
+  100% {
+    transform: rotate(8deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes paper-spin-round {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes paper-spin-round-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-paper-1 {
+  animation: paper-rotate-1 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-paper-2 {
+  animation: paper-rotate-2 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-paper-round {
+  animation: paper-spin-round 75s linear infinite;
+  will-change: transform;
+}
+
+.animate-paper-round-reverse {
+  animation: paper-spin-round-reverse 90s linear infinite;
+  will-change: transform;
 }
 
 .animate-float-1 {
@@ -135,14 +178,4 @@
 .animate-float-2 {
   animation: float-slow-2 22s ease-in-out infinite;
   will-change: transform;
-}
-
-.animate-float-3 {
-  animation: float-slow-3 16s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-pulse-mesh {
-  animation: pulse-mesh 12s ease-in-out infinite;
-  will-change: transform, opacity;
 }
