@@ -12,17 +12,25 @@ export default function Hero({ onOpenContact }: HeroProps) {
       id="hero"
       className="relative h-[100dvh] min-h-[580px] max-h-[960px] flex flex-col justify-between items-center overflow-hidden bg-[#FAFAFC] text-[#11141C] pt-24 sm:pt-28 pb-3 sm:pb-4"
     >
-      {/* Soft Ambient Warm Glow */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Center Orange Radial Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[750px] h-[320px] sm:h-[400px] bg-[#FF5C28]/12 rounded-full blur-[90px] sm:blur-[120px] opacity-90" />
-        
-        {/* Subtle Top Ember Warmth */}
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-[#FF8A65]/10 rounded-full blur-[100px]" />
+      {/* Aesthetic Moving Light Gradient Background Animation */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+        {/* Slow Morphing Ambient Conic Mesh */}
+        <div className="absolute -top-[30%] -left-[20%] w-[140%] h-[160%] opacity-35 animate-hero-conic blur-[130px] bg-[conic-gradient(from_0deg_at_50%_50%,#FFF0EB_0deg,#FFE5D9_90deg,#FDE2E4_180deg,#EBF0FF_270deg,#FFF0EB_360deg)]" />
 
-        {/* Ambient Corner Accents */}
-        <div className="absolute top-1/3 -left-20 w-[350px] h-[350px] bg-[#FF5C28]/5 rounded-full blur-[100px]" />
-        <div className="absolute top-1/3 -right-20 w-[350px] h-[350px] bg-[#FF5C28]/5 rounded-full blur-[100px]" />
+        {/* Moving Fluid Blob 1 - Warm Brand Orange / Coral (Top-Left / Center Drift) */}
+        <div className="absolute top-[12%] left-[18%] w-[550px] sm:w-[700px] h-[340px] sm:h-[420px] bg-gradient-to-tr from-[#FF5C28]/22 via-[#FFA07A]/18 to-[#FFD166]/15 rounded-full blur-[100px] sm:blur-[130px] animate-hero-blob-1" />
+
+        {/* Moving Fluid Blob 2 - Soft Rose / Sunset Pink (Top-Right / Mid Drift) */}
+        <div className="absolute top-[16%] right-[12%] w-[480px] sm:w-[620px] h-[350px] sm:h-[440px] bg-gradient-to-bl from-[#EC4899]/16 via-[#F472B6]/14 to-[#FF8A65]/18 rounded-full blur-[110px] sm:blur-[140px] animate-hero-blob-2" />
+
+        {/* Moving Fluid Blob 3 - Soft Lavender / Gentle Indigo / Cyan Breeze (Bottom-Left Drift) */}
+        <div className="absolute bottom-[8%] left-[10%] w-[460px] sm:w-[580px] h-[330px] sm:h-[400px] bg-gradient-to-br from-[#8B5CF6]/14 via-[#C084FC]/10 to-[#38BDF8]/10 rounded-full blur-[100px] sm:blur-[130px] animate-hero-blob-3" />
+
+        {/* Pulsing Core Warmth - Anchored directly behind headline & Brand Growth */}
+        <div className="absolute top-1/2 left-1/2 w-[400px] sm:w-[560px] h-[250px] sm:h-[320px] bg-gradient-to-r from-[#FF5C28]/20 via-[#FF8A65]/18 to-[#FFA07A]/22 rounded-full blur-[85px] sm:blur-[110px] animate-hero-blob-4" />
+
+        {/* Soft bottom vignette to blend seamlessly into the rest of the page */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#FAFAFC] to-transparent pointer-events-none" />
       </div>
 
       {/* Main Centered Content - Scaled to fit laptop screen gracefully */}
@@ -90,8 +98,8 @@ export default function Hero({ onOpenContact }: HeroProps) {
       {/* Subtle Bottom Scroll Indicator */}
       <div className="relative z-10 flex justify-center items-center pb-1">
         <a
-          href="#trusted-by"
-          aria-label="Scroll down to trusted brands"
+          href="#about"
+          aria-label="Scroll down to about section"
           className="p-1.5 rounded-full text-gray-400 hover:text-[#FF5C28] transition-colors animate-bounce"
         >
           <ChevronDown className="w-4 h-4" />
