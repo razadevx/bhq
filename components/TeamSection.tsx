@@ -73,15 +73,15 @@ export default function TeamSection() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-4">
-          <span>The Minds</span>{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+        <h2 className="display-h2 text-gray-900 mb-4">
+          <span className="font-light text-gray-700">The Minds </span>
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
             Behind the Scale
           </span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto font-normal leading-relaxed mb-16">
+        <p className="text-lead text-gray-600 max-w-xl mx-auto mb-16">
           5 founders, 50+ specialists — a team obsessed with turning ambitious brands into market leaders.
         </p>
 

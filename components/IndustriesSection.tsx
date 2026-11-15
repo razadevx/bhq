@@ -96,13 +96,13 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
 
         {/* H2 Heading & Subtitle */}
         <div className="max-w-3xl mb-14">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
-            <span>Marketing That Speaks Your</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
+          <h2 className="display-h2 text-gray-900">
+            <span className="font-light text-gray-700 block">Marketing That Speaks Your</span>
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1">
               Industry&apos;s Language
             </span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
+          <p className="mt-4 text-lead text-gray-600">
             A skincare buyer and a property buyer don&apos;t scroll, think or buy the same way. We build strategy around how your customers actually decide.
           </p>
         </div>

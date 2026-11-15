@@ -89,20 +89,20 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </span>
         </div>
 
-        {/* Uniform 3-Line H1 Typography */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] tracking-tight leading-[1.14] text-center mb-4 sm:mb-5 max-w-4xl text-[#0F172A]">
+        {/* Uniform 3-Line H1 Typography with Clear Aspect Ratio & Weight Contrast */}
+        <h1 className="display-h1 text-center mb-4 sm:mb-5 max-w-4xl text-[#0F172A]">
           {/* Line 1: Lightweight clean aesthetic */}
           <span className="block font-light text-gray-700 tracking-[-0.025em]">
             The Digital Marketing Agency
           </span>
 
           {/* Line 2: Bold contrasting punchline */}
-          <span className="block font-black text-[#0F172A] tracking-[-0.03em] my-1">
+          <span className="block font-extrabold text-[#0F172A] tracking-[-0.03em] my-1">
             in Pakistan for Brands That Demand
           </span>
 
           {/* Line 3: Locked on ONE single line across all screens (No gap before comma) */}
-          <span className="block font-black tracking-[-0.03em]">
+          <span className="block font-extrabold tracking-[-0.03em]">
             <span
               className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#FF6F3C] to-[#EC4899] drop-shadow-[0_0_25px_rgba(255,92,40,0.20)] transition-all duration-180 ease-out transform ${
                 fadeState === "in"

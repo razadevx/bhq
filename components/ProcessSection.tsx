@@ -59,13 +59,13 @@ export default function ProcessSection() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
-            From First Call to Full Scale{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
+          <h2 className="display-h2 text-gray-900">
+            <span className="font-light text-gray-700">From First Call to Full Scale </span>
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
               in 5 Steps
             </span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-gray-600">
+          <p className="mt-4 text-lead text-gray-600">
             A battle-tested scaling framework engineered to eliminate guesswork and deliver predictable, compound revenue.
           </p>
         </div>

@@ -131,22 +131,22 @@ export default function AboutSection({ onOpenContact }: AboutSectionProps) {
         {/* H2 Heading & Narrative */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
           <div className="lg:col-span-6">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
-              <span>Not Another Marketing Agency.</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
+            <h2 className="display-h2 text-gray-900">
+              <span className="font-light text-gray-700 block">Not Another Marketing Agency.</span>
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1">
                 Your Growth Team.
               </span>
             </h2>
           </div>
 
           <div className="lg:col-span-6 space-y-3.5 pt-1">
-            <p className="text-base sm:text-lg text-gray-900 font-semibold leading-relaxed">
+            <p className="text-lead text-gray-900 font-semibold leading-relaxed">
               Most agencies sell you posts, impressions and monthly reports nobody reads. We sell growth.
             </p>
-            <p className="text-sm text-gray-600 leading-relaxed font-normal">
+            <p className="text-body-standard text-gray-600">
               Brands Headquarter is a full-service digital marketing agency in Pakistan where strategists, designers, content creators, media buyers and developers work as one team on your brand. No hand-offs between five vendors. No finger-pointing when numbers drop.
             </p>
-            <p className="text-sm text-gray-600 leading-relaxed font-normal">
+            <p className="text-body-standard text-gray-600">
               We start with your business goals — more orders, lower cost per customer, a stronger brand — and work backwards to the content, campaigns and website that get you there. New brand or established name, we bring the plan and the people to move you forward.
             </p>
             <div className="pt-2">

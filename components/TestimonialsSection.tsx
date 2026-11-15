@@ -71,13 +71,13 @@ export default function TestimonialsSection() {
         {/* Heading & Subtitle Grid */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
-              <span>Don&apos;t Take</span>{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            <h2 className="display-h2 text-gray-900">
+              <span className="font-light text-gray-700">Don&apos;t Take </span>
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
                 Our Word for It
               </span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
+            <p className="mt-4 text-lead text-gray-600">
               The best proof isn&apos;t what we say about ourselves — it&apos;s what our clients say after working with us.
             </p>
           </div>

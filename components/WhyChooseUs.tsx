@@ -73,13 +73,13 @@ export default function WhyChooseUs() {
 
         {/* Heading & Subtitle */}
         <div className="max-w-3xl mb-14">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
-            <span>We Don&apos;t Run Campaigns.</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
+          <h2 className="display-h2 text-gray-900">
+            <span className="font-light text-gray-700 block">We Don&apos;t Run Campaigns.</span>
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1">
               We Build Growth Systems.
             </span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
+          <p className="mt-4 text-lead text-gray-600">
             Anyone can boost a post. Building something that grows month after month takes a system — here&apos;s ours.
           </p>
         </div>

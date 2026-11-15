@@ -95,13 +95,13 @@ export default function FAQSection() {
           </div>
 
           {/* H2 Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
-            Frequently Asked{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
+          <h2 className="display-h2 text-gray-900">
+            <span className="font-light text-gray-700">Frequently Asked </span>
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
               Questions
             </span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-gray-600">
+          <p className="mt-4 text-lead text-gray-600">
             Clear, honest answers about how we partner with brands, manage budgets, and engineer revenue.
           </p>
         </div>

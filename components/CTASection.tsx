@@ -23,15 +23,15 @@ export default function CTASection({ onOpenContact }: CTASectionProps) {
         </div>
 
         {/* H2 Heading - Moderate, aesthetic proportion */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15] text-white mb-6">
-          <span>Ready to Stop Guessing</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1.5">
+        <h2 className="display-h2 text-white mb-6">
+          <span className="font-light text-gray-200 block">Ready to Stop Guessing</span>
+          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1.5">
             and Start Growing?
           </span>
         </h2>
 
-        {/* Subtitle & Body (Exact from PDF Page 7) */}
-        <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto font-normal leading-relaxed mb-4">
+        {/* Subtitle & Body */}
+        <p className="text-lead text-gray-300 max-w-2xl mx-auto mb-4">
           Building a brand from zero, fixing ads that aren&apos;t converting, or scaling a store to the next level — let&apos;s map out exactly how to get you there.
         </p>
         <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-normal leading-relaxed mb-10">

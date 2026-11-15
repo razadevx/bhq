@@ -126,15 +126,15 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
             </div>
 
             {/* H2 Heading */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
-              Real Brands. Real Numbers.{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
+            <h2 className="display-h2 text-gray-900">
+              <span className="font-light text-gray-700">Real Brands. Real Numbers. </span>
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
                 Real Growth.
               </span>
             </h2>
 
             {/* Subtitle */}
-            <p className="mt-4 text-sm sm:text-base text-gray-600">
+            <p className="mt-4 text-lead text-gray-600">
               We&apos;d rather show you than tell you. Here&apos;s what happened when these brands trusted us with their growth.
             </p>
           </div>

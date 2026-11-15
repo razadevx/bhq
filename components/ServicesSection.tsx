@@ -152,13 +152,13 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
         {/* Heading & Subtitle Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end justify-between mb-14">
           <div className="lg:col-span-8">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
-              <span>Digital Marketing Services</span>{" "}
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
+            <h2 className="display-h2 text-gray-900">
+              <span className="font-light text-gray-700 block">Digital Marketing Services</span>
+              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1">
                 That Pay for Themselves
               </span>
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-gray-600 font-normal max-w-2xl leading-relaxed">
+            <p className="mt-4 text-lead text-gray-600 max-w-2xl">
               Six services. One goal. Every one of them is built to bring you customers — and they work even harder together.
             </p>
           </div>

@@ -75,9 +75,9 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
         {/* Heading */}
         <div className="mb-14">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
-            <span>Let&apos;s Build</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
+          <h2 className="display-h2 text-gray-900">
+            <span className="font-light text-gray-700 block">Let&apos;s Build</span>
+            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1">
               Something Great
             </span>
           </h2>
