@@ -68,7 +68,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
             GET IN TOUCH
           </span>
         </div>
@@ -333,10 +333,10 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-full text-sm font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-md shadow-black/10 flex items-center justify-center gap-2 group disabled:opacity-70"
+                    className="w-full py-4 rounded-full text-base sm:text-lg font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-md shadow-black/10 flex items-center justify-center gap-2.5 group disabled:opacity-70"
                   >
                     <span>Send Message</span>
-                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </button>
                 </form>
               )}

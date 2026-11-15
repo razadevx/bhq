@@ -67,7 +67,7 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
             OUR PEOPLE
           </span>
         </div>
@@ -113,10 +113,10 @@ export default function TeamSection() {
                 </div>
               </div>
 
-              <h4 className="text-base sm:text-lg font-black text-gray-900">
+              <h4 className="text-lg sm:text-xl font-bold text-gray-900">
                 {founder.name}
               </h4>
-              <p className="text-xs text-gray-500 font-medium">
+              <p className="text-xs sm:text-sm text-gray-500 font-medium">
                 {founder.role}
               </p>
             </div>

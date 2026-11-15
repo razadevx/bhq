@@ -144,7 +144,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-white border border-gray-200 shadow-xs">
+          <span className="badge-eyebrow text-gray-700 bg-white border border-gray-200 shadow-xs">
             WHAT WE DO
           </span>
         </div>
@@ -166,9 +166,9 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
           <div className="lg:col-span-4 flex lg:justify-end items-center">
             <button
               onClick={() => onOpenContact("Free Audit")}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-gray-900 border border-gray-200 hover:border-[#FF5C28] hover:text-[#FF5C28] shadow-xs hover:shadow-md transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-bold bg-white text-gray-900 border border-gray-200 hover:border-[#FF5C28] hover:text-[#FF5C28] shadow-xs hover:shadow-md transition-all duration-300"
             >
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#FF5C28]" />
+              <ArrowUpRight className="w-4 h-4 text-[#FF5C28]" />
               <span>Not sure where to start? Get a free audit →</span>
             </button>
           </div>
@@ -202,12 +202,12 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
                   </div>
 
                   {/* Service Title as H3 (SEO Requirement) */}
-                  <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-3 tracking-tight group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="display-h3 text-gray-900 mb-3 group-hover:text-[#FF5C28] transition-colors">
                     {service.num}. {service.title}
                   </h3>
 
                   {/* Body Copy (Exact from PDF) */}
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal mb-6">
+                  <p className="text-body-standard text-gray-600 mb-6">
                     {service.body}
                   </p>
 
@@ -216,7 +216,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
                     {service.pills.map((pill, pIdx) => (
                       <span
                         key={pIdx}
-                        className="text-[10px] sm:text-[11px] font-medium px-2.5 py-1 rounded-lg bg-gray-100/80 text-gray-700 border border-gray-200/60"
+                        className="text-xs sm:text-[13px] font-semibold px-3 py-1.5 rounded-lg bg-gray-100/90 text-gray-700 border border-gray-200/70"
                       >
                         {pill}
                       </span>
@@ -228,14 +228,14 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
                 <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                   <button
                     onClick={() => onOpenContact(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-900 group-hover:text-[#FF5C28] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-gray-900 group-hover:text-[#FF5C28] transition-colors"
                   >
                     <span>{service.ctaText}</span>
                   </button>
                   <button
                     onClick={() => onOpenContact(service.title)}
                     aria-label={`Open consultation for ${service.title}`}
-                    className="w-8 h-8 rounded-full bg-gray-100 text-gray-600 group-hover:bg-[#FF5C28] group-hover:text-white flex items-center justify-center transition-colors shadow-xs"
+                    className="w-9 h-9 rounded-full bg-gray-100 text-gray-600 group-hover:bg-[#FF5C28] group-hover:text-white flex items-center justify-center transition-colors shadow-xs"
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
@@ -248,7 +248,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
         {/* Section Bottom Banner CTA (Exact from PDF Page 4) */}
         <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <h4 className="text-base sm:text-lg font-bold text-gray-900">
+            <h4 className="text-lg sm:text-xl font-bold text-gray-900">
               Not sure which service is right for your growth stage?
             </h4>
             <p className="text-xs sm:text-sm text-gray-500 mt-1">
@@ -257,7 +257,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
           </div>
           <button
             onClick={() => onOpenContact("Free Growth Audit")}
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-md shadow-[#FF5C28]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm sm:text-base font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-md shadow-[#FF5C28]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             <span>Get a Free Audit →</span>
           </button>

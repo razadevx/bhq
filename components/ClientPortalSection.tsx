@@ -17,7 +17,7 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
             OUR DIFFERENCE
           </span>
         </div>
@@ -129,7 +129,7 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
         <div className="mt-5">
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-lg hover:shadow-[#FF5C28]/25"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm sm:text-base font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-lg hover:shadow-[#FF5C28]/25 hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Experience It Live</span>
             <ArrowRight className="w-4 h-4" />

@@ -12,7 +12,7 @@ export default function PartnersSection({ onOpenContact }: PartnersSectionProps)
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
             CERTIFICATIONS
           </span>
         </div>

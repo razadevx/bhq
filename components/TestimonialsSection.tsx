@@ -61,9 +61,9 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Eyebrow Pill (Exact from PDF Page 6) */}
+        {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
             CLIENT STORIES
           </span>
         </div>
@@ -100,10 +100,10 @@ export default function TestimonialsSection() {
               key={i}
               className="p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#FF5C28]/40 hover:shadow-lg transition-all"
             >
-              <div className="text-2xl sm:text-3xl font-bold text-[#FF5C28] tracking-tight mb-1.5">
+              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#FF5C28] tracking-tight mb-2">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-medium text-gray-600">
+              <div className="text-xs sm:text-sm font-semibold text-gray-700">
                 {stat.label}
               </div>
             </div>

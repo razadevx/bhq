@@ -83,7 +83,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
       <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4 sm:mb-5">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-[0.16em] text-gray-800 bg-white/90 border border-gray-200/90 shadow-2xs backdrop-blur-md">
+          <span className="badge-eyebrow text-gray-800 bg-white/95 border border-gray-200/90 shadow-2xs backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28] animate-pulse" />
             STRATEGY · CREATIVE · PERFORMANCE
           </span>
@@ -123,20 +123,20 @@ export default function Hero({ onOpenContact }: HeroProps) {
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-5 sm:mb-6">
           <button
             onClick={() => onOpenContact("Free Growth Plan")}
-            className="inline-flex items-center justify-center px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-lg shadow-[#FF5C28]/25 hover:shadow-xl hover:shadow-[#FF5C28]/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-full text-sm sm:text-base font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-lg shadow-[#FF5C28]/25 hover:shadow-xl hover:shadow-[#FF5C28]/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
           >
             Get My Free Growth Plan
           </button>
           <a
             href="#case-studies"
-            className="inline-flex items-center justify-center px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/95 backdrop-blur-md border border-gray-300/90 text-gray-800 hover:bg-white hover:border-gray-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xs"
+            className="inline-flex items-center justify-center px-7 sm:px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold bg-white/95 backdrop-blur-md border border-gray-300/90 text-gray-800 hover:bg-white hover:border-gray-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xs"
           >
             See the Results →
           </a>
         </div>
 
         {/* High-Contrast Social Proof Trust Line */}
-        <div className="text-[10px] sm:text-xs text-gray-600 font-medium tracking-wide flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+        <div className="text-xs sm:text-sm text-gray-700 font-medium tracking-wide flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
           <span className="text-[#FF5C28] font-bold">★★★★★</span>
           <span className="font-bold text-gray-900">200+ brands scaled</span>
           <span className="opacity-40">•</span>

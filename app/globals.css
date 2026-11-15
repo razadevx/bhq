@@ -39,39 +39,39 @@
 /* TYPOGRAPHIC MODULAR SYSTEM (Harmonious scale & aspect ratio) */
 /* ============================================================ */
 @layer components {
-  /* H1: Hero Primary Headline */
+  /* H1: Hero Primary Headline (+25% bigger) */
   .display-h1 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.45rem] tracking-tight leading-[1.12];
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-[4.1rem] xl:text-[4.35rem] tracking-tight leading-[1.12];
   }
 
-  /* H2: Section Primary Headline - engaging, balanced aspect ratio */
+  /* H2: Section Primary Headline (+25% bigger) */
   .display-h2 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] tracking-tight leading-[1.14];
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] tracking-tight leading-[1.14];
   }
 
-  /* H3: Card / Subsection Title */
+  /* H3: Card / Subsection Title (+25% bigger) */
   .display-h3 {
-    @apply text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-900 leading-snug;
+    @apply text-xl sm:text-2xl lg:text-[1.75rem] font-bold tracking-tight text-gray-900 leading-snug;
   }
 
-  /* H4: Item / Detail Headline */
+  /* H4: Item / Detail Headline (+25% bigger) */
   .display-h4 {
-    @apply text-sm sm:text-base font-bold text-gray-900 leading-snug;
+    @apply text-base sm:text-lg lg:text-xl font-bold text-gray-900 leading-snug;
   }
 
-  /* Lead Subheading Paragraph */
+  /* Lead Subheading Paragraph (Kept as user liked) */
   .text-lead {
     @apply text-sm sm:text-base md:text-lg text-gray-600 font-normal leading-relaxed;
   }
 
-  /* Regular Body Paragraph */
+  /* Regular Body Paragraph (Kept as user liked) */
   .text-body-standard {
     @apply text-xs sm:text-sm text-gray-600 font-normal leading-relaxed;
   }
 
-  /* Refined Eyebrow Badge */
+  /* Refined Eyebrow Badge (+25% bigger) */
   .badge-eyebrow {
-    @apply inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider;
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-[13px] font-bold uppercase tracking-wider;
   }
 }
 

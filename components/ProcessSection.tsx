@@ -51,9 +51,9 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gray-200 bg-gray-50 mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#FF5C28]" />
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700">
+          <div className="mb-4">
+            <span className="badge-eyebrow text-gray-700 bg-gray-50 border border-gray-200">
+              <span className="w-2 h-2 rounded-full bg-[#FF5C28]" />
               HOW WE WORK
             </span>
           </div>
@@ -82,27 +82,27 @@ export default function ProcessSection() {
                 <div>
                   {/* Step header */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
+                    <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
                       {s.step}
                     </span>
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-white text-gray-600 border border-gray-200/60 shadow-2xs">
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-white text-gray-700 border border-gray-200/80 shadow-2xs">
                       {s.tag}
                     </span>
                   </div>
 
-                  <div className="w-11 h-11 rounded-2xl bg-white flex items-center justify-center text-[#FF5C28] mb-4 shadow-xs border border-gray-100 group-hover:bg-[#FF5C28] group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-[#FF5C28] mb-4 shadow-xs border border-gray-100 group-hover:bg-[#FF5C28] group-hover:text-white transition-colors">
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-black text-gray-900 mb-2 group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#FF5C28] transition-colors">
                     {s.title}
                   </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed font-normal">
+                  <p className="text-body-standard text-gray-600">
                     {s.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-gray-200/60 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
+                <div className="pt-4 mt-6 border-t border-gray-200/60 flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
                   <span>Step {s.step}</span>
                   <span>→</span>
                 </div>

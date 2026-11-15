@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
+          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
             THE BRANDS HEADQUARTER DIFFERENCE
           </span>
         </div>
@@ -105,15 +105,15 @@ export default function WhyChooseUs() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-gray-900 mb-2.5 group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="display-h3 text-gray-900 mb-2.5 group-hover:text-[#FF5C28] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
+                  <p className="text-body-standard text-gray-600">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
+                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
                   <span>Growth Principle {item.num}</span>
                   <span>→</span>
                 </div>
