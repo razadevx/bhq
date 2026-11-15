@@ -132,8 +132,8 @@ export default function AboutSection({ onOpenContact }: AboutSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-14">
           <div className="lg:col-span-6">
             <h2 className="display-h2 text-gray-900">
-              <span className="font-light text-gray-700 block">Not Another Marketing Agency.</span>
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1">
+              <span className="font-light text-gray-700 block mb-1.5">Not Another Marketing Agency.</span>
+              <span className="font-extrabold gradient-heading-accent">
                 Your Growth Team.
               </span>
             </h2>

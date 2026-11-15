@@ -61,7 +61,7 @@ export default function ProcessSection() {
           {/* Heading */}
           <h2 className="display-h2 text-gray-900">
             <span className="font-light text-gray-700">From First Call to Full Scale </span>
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
+            <span className="font-extrabold gradient-heading-accent-warm">
               in 5 Steps
             </span>
           </h2>

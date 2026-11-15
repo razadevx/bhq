@@ -21,7 +21,7 @@ export default function CEOSpotlightSection() {
         <div className="mb-14">
           <h2 className="display-h2 text-white">
             <span className="font-light text-gray-300">Leadership with </span>
-            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            <span className="font-extrabold gradient-heading-accent">
               Purpose
             </span>
           </h2>

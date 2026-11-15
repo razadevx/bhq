@@ -24,8 +24,8 @@ export default function CTASection({ onOpenContact }: CTASectionProps) {
 
         {/* H2 Heading - Moderate, aesthetic proportion */}
         <h2 className="display-h2 text-white mb-6">
-          <span className="font-light text-gray-200 block">Ready to Stop Guessing</span>
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] block mt-1.5">
+          <span className="font-light text-gray-200 block mb-2">Ready to Stop Guessing</span>
+          <span className="font-extrabold gradient-heading-accent">
             and Start Growing?
           </span>
         </h2>

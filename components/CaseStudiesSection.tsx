@@ -128,7 +128,7 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
             {/* H2 Heading */}
             <h2 className="display-h2 text-gray-900">
               <span className="font-light text-gray-700">Real Brands. Real Numbers. </span>
-              <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
+              <span className="font-extrabold gradient-heading-accent-warm">
                 Real Growth.
               </span>
             </h2>

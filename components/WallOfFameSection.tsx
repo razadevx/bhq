@@ -44,7 +44,7 @@ export default function WallOfFameSection() {
         {/* Heading */}
         <h2 className="display-h2 text-gray-900 mb-4">
           <span className="font-light text-gray-700">Wall of </span>
-          <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+          <span className="font-extrabold gradient-heading-accent">
             Fame
           </span>
         </h2>
