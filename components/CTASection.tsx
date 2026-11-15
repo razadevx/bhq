@@ -16,8 +16,8 @@ export default function CTASection({ onOpenContact }: CTASectionProps) {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-6">
-          <span className="badge-eyebrow text-orange-300 bg-white/10 border border-white/15 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-[#FF5C28] animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-orange-300 bg-white/5 border border-white/10 backdrop-blur-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28] animate-pulse" />
             YOUR NEXT GROWTH CHAPTER STARTS HERE
           </span>
         </div>
@@ -38,23 +38,23 @@ export default function CTASection({ onOpenContact }: CTASectionProps) {
           Book a free 30-minute strategy call. You&apos;ll walk away with clear next steps, whether you work with us or not.
         </p>
 
-        {/* Centered Dual Action Buttons */}
+        {/* Centered Dual Action Buttons (Primary & Secondary CTA from PDF Page 7) */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-2.5 px-9 py-4 rounded-full text-base sm:text-lg font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-[#FF5C28]/30 group"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-[#FF5C28]/30 group"
           >
             <span>Book My Free Strategy Call</span>
-            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
 
           <a
             href="https://wa.me/923111173477?text=Hi%20Brands%20Headquarter%2C%20I%20would%20like%20to%20book%20a%20strategy%20call%20for%20my%20brand."
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-base sm:text-lg font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 hover:border-white/30 hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-md"
+            className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full text-sm font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 hover:border-white/30 hover:scale-105 active:scale-95 transition-all duration-300 backdrop-blur-md"
           >
-            <MessageCircle className="w-5 h-5 text-[#25D366]" />
+            <MessageCircle className="w-4 h-4 text-[#25D366]" />
             <span>Message Us on WhatsApp</span>
           </a>
         </div>

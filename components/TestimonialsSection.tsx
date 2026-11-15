@@ -61,9 +61,9 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Eyebrow Pill */}
+        {/* Eyebrow Pill (Exact from PDF Page 6) */}
         <div className="mb-4">
-          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
             CLIENT STORIES
           </span>
         </div>
@@ -100,10 +100,10 @@ export default function TestimonialsSection() {
               key={i}
               className="p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#FF5C28]/40 hover:shadow-lg transition-all"
             >
-              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-[#FF5C28] tracking-tight mb-2">
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#FF5C28] tracking-tight mb-1.5">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-semibold text-gray-700">
+              <div className="text-xs sm:text-sm font-medium text-gray-600">
                 {stat.label}
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function TestimonialsSection() {
                   {rev.author.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-black text-gray-900 leading-tight">
+                  <h4 className="text-sm sm:text-base font-bold text-gray-900 leading-tight">
                     {rev.author}
                   </h4>
                   <p className="text-[11px] text-gray-500 font-medium">

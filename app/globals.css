@@ -39,39 +39,39 @@
 /* TYPOGRAPHIC MODULAR SYSTEM (Harmonious scale & aspect ratio) */
 /* ============================================================ */
 @layer components {
-  /* H1: Hero Primary Headline (+25% bigger) */
+  /* H1: Hero Primary Headline - untouched per user constraint */
   .display-h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-[4.1rem] xl:text-[4.35rem] tracking-tight leading-[1.12];
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.45rem] tracking-tight leading-[1.12];
   }
 
-  /* H2: Section Primary Headline (+25% bigger) */
+  /* H2: Section Primary Headline - scaled +15% for strong visual engagement */
   .display-h2 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] tracking-tight leading-[1.14];
+    @apply text-[1.75rem] sm:text-4xl md:text-[2.65rem] lg:text-[3.1rem] tracking-tight leading-[1.14];
   }
 
-  /* H3: Card / Subsection Title (+25% bigger) */
+  /* H3: Card / Subsection Title - scaled +15% */
   .display-h3 {
-    @apply text-xl sm:text-2xl lg:text-[1.75rem] font-bold tracking-tight text-gray-900 leading-snug;
+    @apply text-xl sm:text-2xl lg:text-[1.7rem] font-bold tracking-tight text-gray-900 leading-snug;
   }
 
-  /* H4: Item / Detail Headline (+25% bigger) */
+  /* H4: Item / Detail Headline - scaled +15% */
   .display-h4 {
     @apply text-base sm:text-lg lg:text-xl font-bold text-gray-900 leading-snug;
   }
 
-  /* Lead Subheading Paragraph (Kept as user liked) */
+  /* Lead Subheading Paragraph - maintained as requested */
   .text-lead {
     @apply text-sm sm:text-base md:text-lg text-gray-600 font-normal leading-relaxed;
   }
 
-  /* Regular Body Paragraph (Kept as user liked) */
+  /* Regular Body Paragraph - maintained as requested */
   .text-body-standard {
     @apply text-xs sm:text-sm text-gray-600 font-normal leading-relaxed;
   }
 
-  /* Refined Eyebrow Badge (+25% bigger) */
+  /* Refined Eyebrow Badge */
   .badge-eyebrow {
-    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-[13px] font-bold uppercase tracking-wider;
+    @apply inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider;
   }
 }
 

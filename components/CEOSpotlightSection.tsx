@@ -12,7 +12,7 @@ export default function CEOSpotlightSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="badge-eyebrow text-gray-300 bg-white/10 border border-white/15">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-400 bg-white/10 border border-white/10">
             A WORD FROM OUR CEO
           </span>
         </div>

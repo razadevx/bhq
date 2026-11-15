@@ -123,7 +123,7 @@ export default function AboutSection({ onOpenContact }: AboutSectionProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow: WHO WE ARE */}
         <div className="mb-4">
-          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
+          <span className="inline-block px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
             WHO WE ARE
           </span>
         </div>
@@ -179,7 +179,7 @@ export default function AboutSection({ onOpenContact }: AboutSectionProps) {
                   >
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1.5 group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1.5 group-hover:text-[#FF5C28] transition-colors">
                     {val.title}
                   </h3>
                   <p className="text-xs text-gray-500 leading-relaxed font-normal">
@@ -187,7 +187,7 @@ export default function AboutSection({ onOpenContact }: AboutSectionProps) {
                   </p>
                 </div>
 
-                <div className="pt-3.5 mt-3.5 border-t border-gray-100 flex items-center gap-1 text-xs font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
+                <div className="pt-3.5 mt-3.5 border-t border-gray-100 flex items-center gap-1 text-[10px] font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
                   <span>Core Value</span>
                   <span>→</span>
                 </div>
@@ -208,43 +208,43 @@ export default function AboutSection({ onOpenContact }: AboutSectionProps) {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10 text-center items-center">
             {/* Stat 1: 9+ */}
             <div className="flex flex-col items-center group/stat">
-              <span className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899] tracking-tight leading-none mb-2.5 group-hover/stat:scale-105 transition-transform duration-300">
+              <span className="text-3xl sm:text-4xl lg:text-[2.35rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899] tracking-tight leading-none mb-2 group-hover/stat:scale-105 transition-transform duration-300">
                 <AnimatedStat value={9} suffix="+" duration={1600} />
               </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-400 max-w-[140px]">
+              <span className="text-xs font-medium text-gray-400 max-w-[130px]">
                 Years of Scaling Brands
               </span>
             </div>
 
             {/* Stat 2: 200+ */}
             <div className="flex flex-col items-center group/stat">
-              <span className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-[#D946EF] tracking-tight leading-none mb-2.5 group-hover/stat:scale-105 transition-transform duration-300">
+              <span className="text-3xl sm:text-4xl lg:text-[2.35rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-[#D946EF] tracking-tight leading-none mb-2 group-hover/stat:scale-105 transition-transform duration-300">
                 <AnimatedStat value={200} suffix="+" duration={1800} />
               </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-400 max-w-[160px]">
+              <span className="text-xs font-medium text-gray-400 max-w-[150px]">
                 Brands Scaled Across Pakistan &amp; GCC
               </span>
             </div>
 
             {/* Stat 3: PKR 500M+ (Clean, inline, non-wrapping aesthetic) */}
             <div className="flex flex-col items-center group/stat">
-              <div className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#8B5CF6] tracking-tight leading-none mb-2.5 group-hover/stat:scale-105 transition-transform duration-300 flex items-baseline justify-center whitespace-nowrap">
-                <span className="text-sm sm:text-base font-semibold tracking-wider text-purple-300/90 mr-1.5 uppercase select-none">
+              <div className="text-3xl sm:text-4xl lg:text-[2.35rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#8B5CF6] tracking-tight leading-none mb-2 group-hover/stat:scale-105 transition-transform duration-300 flex items-baseline justify-center whitespace-nowrap">
+                <span className="text-xs sm:text-sm font-semibold tracking-wider text-purple-300/90 mr-1.5 uppercase select-none">
                   PKR
                 </span>
                 <AnimatedStat value={500} suffix="M+" duration={2000} />
               </div>
-              <span className="text-xs sm:text-sm font-medium text-gray-400 max-w-[140px]">
+              <span className="text-xs font-medium text-gray-400 max-w-[130px]">
                 Managed Ad Spend
               </span>
             </div>
 
             {/* Stat 4: 93% (Client Retention) */}
             <div className="flex flex-col items-center group/stat">
-              <span className="text-3xl sm:text-4xl lg:text-[2.65rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] tracking-tight leading-none mb-2.5 group-hover/stat:scale-105 transition-transform duration-300">
+              <span className="text-3xl sm:text-4xl lg:text-[2.35rem] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] tracking-tight leading-none mb-2 group-hover/stat:scale-105 transition-transform duration-300">
                 <AnimatedStat value={93} suffix="%" duration={1700} />
               </span>
-              <span className="text-xs sm:text-sm font-medium text-gray-400 max-w-[140px]">
+              <span className="text-xs font-medium text-gray-400 max-w-[130px]">
                 Client Retention Rate
               </span>
             </div>

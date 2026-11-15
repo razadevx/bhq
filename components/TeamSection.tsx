@@ -67,7 +67,7 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
             OUR PEOPLE
           </span>
         </div>
@@ -116,7 +116,7 @@ export default function TeamSection() {
               <h4 className="text-lg sm:text-xl font-bold text-gray-900">
                 {founder.name}
               </h4>
-              <p className="text-xs sm:text-sm text-gray-500 font-medium">
+              <p className="text-xs text-gray-500 font-medium">
                 {founder.role}
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function TeamSection() {
               <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-gray-100 to-gray-200 border-2 border-gray-200 flex items-center justify-center text-lg font-black text-gray-700 mb-3 shadow-xs group-hover:border-[#FF5C28] group-hover:scale-105 transition-all">
                 {spec.name.split(" ").map((n) => n[0]).join("")}
               </div>
-              <h5 className="text-xs sm:text-sm font-bold text-gray-900">
+              <h5 className="text-sm sm:text-base font-bold text-gray-900">
                 {spec.name}
               </h5>
               <p className="text-[10px] sm:text-[11px] text-gray-400 font-medium mt-0.5">

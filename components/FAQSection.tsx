@@ -87,9 +87,9 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           {/* Eyebrow Pill */}
-          <div className="mb-4">
-            <span className="badge-eyebrow text-gray-700 bg-gray-50 border border-gray-200">
-              <HelpCircle className="w-4 h-4 text-[#FF5C28]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gray-200 bg-gray-50 mb-4">
+            <HelpCircle className="w-3.5 h-3.5 text-[#FF5C28]" />
+            <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700">
               GOT QUESTIONS?
             </span>
           </div>

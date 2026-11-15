@@ -12,7 +12,7 @@ export default function PartnersSection({ onOpenContact }: PartnersSectionProps)
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
             CERTIFICATIONS
           </span>
         </div>
@@ -50,7 +50,7 @@ export default function PartnersSection({ onOpenContact }: PartnersSectionProps)
                 </div>
               </div>
 
-              <h3 className="text-2xl font-black text-gray-900 mb-3">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
                 Google Premier Partner 2026
               </h3>
 
@@ -101,7 +101,7 @@ export default function PartnersSection({ onOpenContact }: PartnersSectionProps)
                 </div>
               </div>
 
-              <h3 className="text-2xl font-black text-gray-900 mb-3">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
                 Shopify Select Partner
               </h3>
 

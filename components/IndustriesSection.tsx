@@ -89,7 +89,7 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-4">
-          <span className="badge-eyebrow text-gray-700 bg-gray-100 border border-gray-200">
+          <span className="inline-block px-4 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-gray-100 border border-gray-200">
             INDUSTRIES WE KNOW
           </span>
         </div>
@@ -124,23 +124,23 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-gray-50 text-gray-700 border border-gray-100">
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-gray-50 text-gray-600 border border-gray-100">
                       {ind.badge}
                     </span>
                   </div>
 
-                  <h3 className="display-h3 text-gray-900 mb-2 group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#FF5C28] transition-colors">
                     {ind.name}
                   </h3>
 
-                  <p className="text-body-standard text-gray-600">
+                  <p className="text-xs text-gray-600 leading-relaxed font-normal">
                     {ind.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
+                <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
                   <span>Explore playbooks</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </div>
             );

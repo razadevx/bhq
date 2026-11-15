@@ -118,9 +118,9 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-3xl">
             {/* Eyebrow Pill */}
-            <div className="mb-4">
-              <span className="badge-eyebrow text-gray-700 bg-white border border-gray-200 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-[#FF5C28]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gray-200 bg-white mb-4 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-[#FF5C28]" />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700">
                 PROVEN RESULTS
               </span>
             </div>
@@ -141,7 +141,7 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
 
           <button
             onClick={() => onOpenContact("All Case Studies")}
-            className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#FF5C28] hover:text-[#e64a19] transition-colors group self-start md:self-end"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#FF5C28] hover:text-[#e64a19] transition-colors group self-start md:self-end"
           >
             <span>See All Case Studies</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -162,36 +162,36 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
                   <span className="text-3xl sm:text-4xl font-extrabold text-[#FF5C28] tracking-tight block">
                     {study.highlightMetric}
                   </span>
-                  <span className="text-xs sm:text-[13px] font-bold text-gray-500 uppercase tracking-wider block mt-0.5">
+                  <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block mt-0.5">
                     {study.metricLabel}
                   </span>
                 </div>
 
                 <div className="mb-4">
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-gray-100 text-gray-700">
                     {study.industry}
                   </span>
                 </div>
 
                 {/* Brand Name as H3 */}
-                <h3 className="display-h3 text-gray-900 group-hover:text-[#FF5C28] transition-colors mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-[#FF5C28] transition-colors mb-2">
                   {study.brand}
                 </h3>
 
-                <p className="text-xs sm:text-sm font-semibold text-gray-500 mb-3">
+                <p className="text-xs font-semibold text-gray-500 mb-3">
                   What we did: <span className="text-gray-800">{study.service}</span>
                 </p>
 
-                <p className="text-body-standard text-gray-600 line-clamp-3">
+                <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed font-normal">
                   {study.summary}
                 </p>
               </div>
 
               {/* Card Footer */}
-              <div className="pt-5 mt-6 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm font-bold text-[#FF5C28]">
+              <div className="pt-5 mt-6 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#FF5C28]">
                 <span>Challenge → Strategy → Results</span>
-                <span className="w-8 h-8 rounded-full bg-orange-50 group-hover:bg-[#FF5C28] group-hover:text-white flex items-center justify-center transition-colors">
-                  <ArrowUpRight className="w-4 h-4" />
+                <span className="w-7 h-7 rounded-full bg-orange-50 group-hover:bg-[#FF5C28] group-hover:text-white flex items-center justify-center transition-colors">
+                  <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
         <div className="mt-12 text-center">
           <button
             onClick={() => onOpenContact("Custom Case Study Walkthrough")}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-sm sm:text-base font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-lg shadow-[#FF5C28]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-lg shadow-[#FF5C28]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             <span>See All Case Studies →</span>
           </button>
