@@ -11,7 +11,6 @@ import {
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
 } from "lucide-react";
 
 interface ServicesSectionProps {
@@ -151,11 +150,11 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
         </div>
 
         {/* Heading & Subtitle Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end justify-between mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end justify-between mb-14">
           <div className="lg:col-span-8">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
               <span>Digital Marketing Services</span>{" "}
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
                 That Pay for Themselves
               </span>
             </h2>
@@ -169,7 +168,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
               onClick={() => onOpenContact("Free Audit")}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-gray-900 border border-gray-200 hover:border-[#FF5C28] hover:text-[#FF5C28] shadow-xs hover:shadow-md transition-all duration-300"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#FF5C28]" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#FF5C28]" />
               <span>Not sure where to start? Get a free audit →</span>
             </button>
           </div>

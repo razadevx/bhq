@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, TrendingUp, Sparkles, X, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, TrendingUp, X, CheckCircle2 } from "lucide-react";
 
 interface CaseStudiesProps {
   onOpenContact: (brandCase?: string) => void;
@@ -126,7 +126,7 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
             </div>
 
             {/* H2 Heading */}
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-gray-900 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
               Real Brands. Real Numbers.{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
                 Real Growth.
@@ -159,7 +159,7 @@ export default function CaseStudiesSection({ onOpenContact }: CaseStudiesProps) 
               <div>
                 {/* Result Highlight First (Per PDF Page 6 instructions) */}
                 <div className="mb-4">
-                  <span className="text-3xl sm:text-4xl font-black text-[#FF5C28] tracking-tight block">
+                  <span className="text-2xl sm:text-3xl font-bold text-[#FF5C28] tracking-tight block">
                     {study.highlightMetric}
                   </span>
                   <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider block mt-0.5">

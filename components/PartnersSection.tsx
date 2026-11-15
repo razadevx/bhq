@@ -18,10 +18,10 @@ export default function PartnersSection({ onOpenContact }: PartnersSectionProps)
         </div>
 
         {/* Heading */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+        <div className="max-w-3xl mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
             <span>Certified</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
               Partners
             </span>
           </h2>

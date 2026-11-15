@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
 
 interface CTASectionProps {
   onOpenContact: () => void;
@@ -8,24 +8,24 @@ interface CTASectionProps {
 
 export default function CTASection({ onOpenContact }: CTASectionProps) {
   return (
-    <section className="py-24 sm:py-32 bg-[#0c0c12] text-white relative overflow-hidden text-center">
+    <section className="py-20 sm:py-28 bg-[#0c0c12] text-white relative overflow-hidden text-center">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#FF5C28]/15 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute -top-24 right-10 w-[350px] h-[350px] bg-[#EC4899]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Eyebrow Pill (Exact from PDF Page 7) */}
+        {/* Eyebrow Pill */}
         <div className="mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-orange-300 bg-white/5 border border-white/10 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF5C28]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28] animate-pulse" />
             YOUR NEXT GROWTH CHAPTER STARTS HERE
           </span>
         </div>
 
-        {/* H2 Heading (Exact from PDF Page 7) */}
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-white mb-6">
+        {/* H2 Heading - Moderate, aesthetic proportion */}
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15] text-white mb-6">
           <span>Ready to Stop Guessing</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-2">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1.5">
             and Start Growing?
           </span>
         </h2>

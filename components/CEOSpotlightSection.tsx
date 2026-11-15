@@ -18,8 +18,8 @@ export default function CEOSpotlightSection() {
         </div>
 
         {/* Heading */}
-        <div className="mb-16">
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.05]">
+        <div className="mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-[1.15]">
             <span>Leadership with</span>{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
               Purpose

@@ -4,7 +4,7 @@ import {
   ShoppingBag,
   Shirt,
   HeartPulse,
-  Sparkles,
+  Droplets,
   Building2,
   UtensilsCrossed,
   Stethoscope,
@@ -44,7 +44,7 @@ const INDUSTRIES = [
   {
     name: "Beauty & Personal Care",
     desc: "Organic skincare UGC reels, dermatologist reviews, before-and-after proof, and routine bundles.",
-    icon: Sparkles,
+    icon: Droplets,
     iconColor: "text-purple-500",
     bgColor: "bg-purple-50",
     badge: "UGC Heavy",
@@ -94,11 +94,11 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
           </span>
         </div>
 
-        {/* H2 Heading & Subtitle (Exact from PDF Page 6) */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+        {/* H2 Heading & Subtitle */}
+        <div className="max-w-3xl mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
             <span>Marketing That Speaks Your</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
               Industry&apos;s Language
             </span>
           </h2>

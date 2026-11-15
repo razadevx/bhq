@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, CheckCircle2, Clock, MessageSquare, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, MessageSquare } from "lucide-react";
 
 interface ClientPortalSectionProps {
   onOpenContact?: () => void;
@@ -23,9 +23,9 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
         </div>
 
         {/* Heading */}
-        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 leading-[1.05] mb-4">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-4">
           <span>Your Work.</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
             Your Control.
           </span>
         </h2>

@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
         {/* Heading & Subtitle Grid */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="max-w-3xl">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
               <span>Don&apos;t Take</span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
                 Our Word for It
@@ -100,7 +100,7 @@ export default function TestimonialsSection() {
               key={i}
               className="p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#FF5C28]/40 hover:shadow-lg transition-all"
             >
-              <div className="text-3xl sm:text-4xl font-black text-[#FF5C28] tracking-tight mb-1.5">
+              <div className="text-2xl sm:text-3xl font-bold text-[#FF5C28] tracking-tight mb-1.5">
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm font-medium text-gray-600">

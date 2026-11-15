@@ -2,7 +2,7 @@
 
 import {
   Compass,
-  Sparkles,
+  Palette,
   BarChart3,
   Layers,
   FileCheck2,
@@ -19,7 +19,7 @@ const SYSTEMS = [
     bgColor: "bg-orange-50",
   },
   {
-    icon: Sparkles,
+    icon: Palette,
     num: "02",
     title: "Creative that sells, not just impresses.",
     desc: "Every hook, visual and caption is built on buyer psychology and tested against real data.",
@@ -71,11 +71,11 @@ export default function WhyChooseUs() {
           </span>
         </div>
 
-        {/* Heading & Subtitle (Exact from PDF Page 5) */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 leading-[1.05]">
+        {/* Heading & Subtitle */}
+        <div className="max-w-3xl mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
             <span>We Don&apos;t Run Campaigns.</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
               We Build Growth Systems.
             </span>
           </h2>

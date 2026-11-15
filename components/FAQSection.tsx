@@ -94,8 +94,8 @@ export default function FAQSection() {
             </span>
           </div>
 
-          {/* H2 Heading (Exact from PDF Page 7) */}
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-gray-900 leading-tight">
+          {/* H2 Heading */}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
             Frequently Asked{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
               Questions

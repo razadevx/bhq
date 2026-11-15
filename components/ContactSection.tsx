@@ -5,7 +5,7 @@ import {
   Mail,
   Phone,
   Clock,
-  Zap,
+  Clock3,
   ArrowUpRight,
   CheckCircle2,
   Instagram,
@@ -74,10 +74,10 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
         </div>
 
         {/* Heading */}
-        <div className="mb-16">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 leading-[1.05]">
+        <div className="mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-[1.15]">
             <span>Let&apos;s Build</span>
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6] mt-1">
               Something Great
             </span>
           </h2>
@@ -143,7 +143,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
               {/* Response Time */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center shrink-0">
-                  <Zap className="w-5 h-5" />
+                  <Clock3 className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">

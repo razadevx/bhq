@@ -58,8 +58,8 @@ export default function ProcessSection() {
             </span>
           </div>
 
-          {/* Heading (Exact from PDF Page 5) */}
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-gray-900 leading-tight">
+          {/* Heading */}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 leading-tight">
             From First Call to Full Scale{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899]">
               in 5 Steps
