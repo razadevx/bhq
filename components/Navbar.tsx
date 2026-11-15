@@ -27,7 +27,6 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
     { label: "Services", href: "#services" },
     { label: "Client Portal", href: "#portal" },
     { label: "Portfolio", href: "#case-studies" },
-    { label: "Clients", href: "#trusted-by" },
   ];
 
   return (

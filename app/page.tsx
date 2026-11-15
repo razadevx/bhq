@@ -46,8 +46,8 @@ export default function Home() {
       {/* 2. Hero Section (High-Performance GPU Animated Paper Background + Uniform 3-Line H1) */}
       <Hero onOpenContact={handleOpenContact} />
 
-      {/* 3. Trusted By (Pakistan's Fastest-Growing Brands Already Trust Us) */}
-      <FlagshipPartnersSection />
+      {/* 3. Trusted By (Hidden for now) */}
+      {/* <FlagshipPartnersSection /> */}
 
       {/* 4. About Us (Not Another Marketing Agency. Your Growth Team.) */}
       <AboutSection onOpenContact={() => handleOpenContact("General Strategy")} />
@@ -76,11 +76,11 @@ export default function Home() {
       {/* 12. Certified Partners (Google Premier 2026 & Shopify Select Partner) */}
       <PartnersSection onOpenContact={handleOpenContact} />
 
-      {/* 13. Wall of Fame (Awards & Industry Recognition) */}
-      <WallOfFameSection />
+      {/* 13. Wall of Fame (Hidden for now) */}
+      {/* <WallOfFameSection /> */}
 
-      {/* 14. CEO Spotlight (Leadership with Purpose - High-Contrast Dark Section) */}
-      <CEOSpotlightSection />
+      {/* 14. CEO Spotlight (Hidden for now) */}
+      {/* <CEOSpotlightSection /> */}
 
       {/* 15. FAQ (Frequently Asked Questions + FAQPage Schema) */}
       <FAQSection />

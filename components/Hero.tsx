@@ -149,8 +149,8 @@ export default function Hero({ onOpenContact }: HeroProps) {
       {/* Subtle Bottom Scroll Indicator */}
       <div className="relative z-10 flex justify-center items-center pb-1">
         <a
-          href="#trusted-by"
-          aria-label="Scroll down to trusted brands"
+          href="#about"
+          aria-label="Scroll down to about section"
           className="p-1.5 rounded-full text-gray-400 hover:text-[#FF5C28] transition-colors animate-bounce"
         >
           <ChevronDown className="w-4 h-4" />
