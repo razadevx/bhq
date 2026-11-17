@@ -7,13 +7,13 @@ interface HeroProps {
   onOpenContact: (service?: string) => void;
 }
 
-// Key rotating agency phrases in sequence
+// Distinct, non-repetitive agency value propositions
 const ROTATING_PHRASES = [
   "Brand Growth",
-  "Revenue Scale",
+  "Annual Revenue",
   "High ROAS",
-  "Real Profit",
-  "Market Scale",
+  "Pure Profit",
+  "Market Dominance",
 ];
 
 export default function Hero({ onOpenContact }: HeroProps) {
@@ -57,20 +57,18 @@ export default function Hero({ onOpenContact }: HeroProps) {
       {/* COMMANDING AGENCY HERO TYPOGRAPHY & CONVERSION HIERARCHY     */}
       {/* ============================================================ */}
       <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10">
-        {/* Eyebrow Meta Bar */}
+        {/* Eyebrow Meta Bar - Clean Positioning Badge (Non-Repetitive) */}
         <div className="mb-3 sm:mb-4">
           <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 bg-white/[0.05] border border-white/10 backdrop-blur-md shadow-inner">
             <span className="w-1.5 h-1.5 rounded-full bg-[#fb8e00] animate-pulse" />
-            <span className="text-gray-300">Lahore · Karachi · Islamabad</span>
-            <span className="text-white/20">•</span>
-            <span className="text-white font-semibold">Full-Service Growth Agency</span>
-            <span className="hidden md:inline text-white/20">•</span>
-            <span className="hidden md:inline text-gray-300">Paid Media · Creative · SEO · CRM</span>
+            <span className="text-white font-semibold">Pakistan&apos;s Premier Performance &amp; Creative Agency</span>
+            <span className="hidden sm:inline text-white/20">•</span>
+            <span className="hidden sm:inline text-gray-300">Meta &amp; Google Certified Partner</span>
           </div>
         </div>
 
-        {/* Monumental Agency 3-Line Headline with Text Changing Animation */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.4rem] font-extrabold tracking-[-0.03em] text-[#ffffff] leading-[1.08] mb-3 sm:mb-4 max-w-5xl">
+        {/* Monumental Agency 3-Line Headline (Reduced by 10% for Optimal Proportion) */}
+        <h1 className="text-[1.7rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] xl:text-[3.95rem] font-extrabold tracking-[-0.03em] text-[#ffffff] leading-[1.09] mb-3 sm:mb-4 max-w-4xl">
           The Agency <br />
           Behind 8-Figure <br />
           <span className="inline-block">
@@ -86,10 +84,10 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </span>
         </h1>
 
-        {/* Punchy, Direct-Response Subheadline */}
+        {/* Punchy, Direct-Response Subheadline (Unique, High-Converting Copy) */}
         <p className="text-xs sm:text-sm md:text-base text-gray-300 font-normal max-w-xl mx-auto leading-relaxed mb-5 sm:mb-6">
-          From high-converting creative to full-funnel media buying — we run every channel, build every growth engine, and scale compounding revenue.{" "}
-          <span className="text-[#ffffff] font-semibold">No juggling. No excuses. Just growth.</span>
+          We engineer high-converting campaigns, conversion-first creative, and dedicated retention systems that turn customer attention into sustainable revenue.{" "}
+          <span className="text-[#ffffff] font-semibold">No juggling vendors. No excuses. Just measurable results.</span>
         </p>
 
         {/* High-Converting Agency Dual CTAs */}
@@ -109,16 +107,16 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </a>
         </div>
 
-        {/* Agency Social Proof & Trust Credentials */}
+        {/* Agency Social Proof & Trust Credentials (Locations Listed Exclusively Here) */}
         <div className="text-xs sm:text-[13px] text-gray-300 font-medium tracking-wide flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 pt-2.5 border-t border-white/10 w-full max-w-2xl">
           <span className="text-[#fb8e00] font-bold tracking-widest">★★★★★</span>
           <span className="font-semibold text-white">200+ Brands Scaled</span>
           <span className="text-white/20">•</span>
           <span className="font-semibold text-white">PKR 500M+ Ad Spend</span>
           <span className="text-white/20">•</span>
-          <span className="text-gray-300">Google Premier & Meta Certified</span>
+          <span className="text-gray-300">Lahore · Karachi · Islamabad</span>
           <span className="hidden sm:inline text-white/20">•</span>
-          <span className="hidden sm:inline text-gray-300">Lahore · Karachi · Islamabad</span>
+          <span className="hidden sm:inline text-gray-400">D2C &amp; Enterprise</span>
         </div>
       </div>
 
