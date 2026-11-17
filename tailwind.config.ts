@@ -11,13 +11,13 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          orange: "#FF5C28",
-          "orange-dark": "#E64A19",
-          "orange-light": "#FF8A65",
-          charcoal: "#11141C",
-          dark: "#0B0C10",
-          card: "#161B26",
-          border: "#232936",
+          orange: "#fb8e00",
+          "orange-dark": "#e07d00",
+          "orange-light": "#ffb03a",
+          charcoal: "#111111",
+          dark: "#010101",
+          card: "#161616",
+          border: "#262626",
         },
       },
       animation: {

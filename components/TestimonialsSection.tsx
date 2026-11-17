@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
             href="https://maps.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-700 hover:text-[#FF5C28] transition-colors self-start md:self-end"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-gray-700 hover:text-[#fb8e00] transition-colors self-start md:self-end"
           >
             <span>Verified 5.0 Star Google Reviews</span>
             <ArrowUpRight className="w-4 h-4" />
@@ -98,9 +98,9 @@ export default function TestimonialsSection() {
           {STATS.map((stat, i) => (
             <div
               key={i}
-              className="p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#FF5C28]/40 hover:shadow-lg transition-all"
+              className="p-7 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs text-center hover:border-[#fb8e00]/40 hover:shadow-lg transition-all"
             >
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#FF5C28] tracking-tight mb-1.5">
+              <div className="text-3xl sm:text-4xl font-extrabold text-[#fb8e00] tracking-tight mb-1.5">
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm font-medium text-gray-600">
@@ -115,17 +115,17 @@ export default function TestimonialsSection() {
           {REVIEWS.slice(0, 3).map((rev, i) => (
             <div
               key={i}
-              className="p-8 rounded-3xl bg-gray-50/70 border border-gray-200/80 hover:bg-white hover:border-[#FF5C28]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              className="p-8 rounded-3xl bg-gray-50/70 border border-gray-200/80 hover:bg-white hover:border-[#fb8e00]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Stars and Result Tag */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="flex gap-1 text-[#FF5C28]">
+                  <div className="flex gap-1 text-[#fb8e00]">
                     {[...Array(5)].map((_, s) => (
                       <Star key={s} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-orange-50 text-[#FF5C28] border border-orange-100">
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-orange-50 text-[#fb8e00] border border-orange-100">
                     {rev.result}
                   </span>
                 </div>
@@ -137,7 +137,7 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="pt-4 border-t border-gray-200/60 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#FF5C28] to-[#EC4899] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#fb8e00] to-[#ffa21a] text-white flex items-center justify-center font-bold text-xs shadow-xs">
                   {rev.author.charAt(0)}
                 </div>
                 <div>

@@ -15,7 +15,7 @@ const SYSTEMS = [
     num: "01",
     title: "Strategy first, always.",
     desc: "No ad goes live until we understand your numbers, your customer and your competition.",
-    iconColor: "text-[#FF5C28]",
+    iconColor: "text-[#fb8e00]",
     bgColor: "bg-orange-50",
   },
   {
@@ -23,16 +23,16 @@ const SYSTEMS = [
     num: "02",
     title: "Creative that sells, not just impresses.",
     desc: "Every hook, visual and caption is built on buyer psychology and tested against real data.",
-    iconColor: "text-rose-500",
-    bgColor: "bg-rose-50",
+    iconColor: "text-amber-600",
+    bgColor: "bg-amber-50",
   },
   {
     icon: BarChart3,
     num: "03",
     title: "Decisions backed by data.",
     desc: "We track every click to every sale, so you know exactly what's working — and what's not.",
-    iconColor: "text-purple-500",
-    bgColor: "bg-purple-50",
+    iconColor: "text-zinc-800",
+    bgColor: "bg-zinc-100",
   },
   {
     icon: Layers,
@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={index}
-                className="relative p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs hover:border-[#FF5C28]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+                className="relative p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs hover:border-[#fb8e00]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -105,7 +105,7 @@ export default function WhyChooseUs() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-2.5 group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2.5 group-hover:text-[#fb8e00] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-normal">
@@ -113,7 +113,7 @@ export default function WhyChooseUs() {
                   </p>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
+                <div className="pt-4 mt-6 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 group-hover:text-[#fb8e00] transition-colors">
                   <span>Growth Principle {item.num}</span>
                   <span>→</span>
                 </div>

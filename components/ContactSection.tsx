@@ -99,7 +99,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </span>
                   <a
                     href="mailto:bdm@brandsheadquarter.com"
-                    className="text-lg font-bold text-gray-900 hover:text-[#FF5C28] transition-colors"
+                    className="text-lg font-bold text-gray-900 hover:text-[#fb8e00] transition-colors"
                   >
                     bdm@brandsheadquarter.com
                   </a>
@@ -117,7 +117,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   </span>
                   <a
                     href="tel:+923111173477"
-                    className="text-lg font-bold text-gray-900 hover:text-[#FF5C28] transition-colors"
+                    className="text-lg font-bold text-gray-900 hover:text-[#fb8e00] transition-colors"
                   >
                     +92 311 117 3477
                   </a>
@@ -126,7 +126,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
 
               {/* Office Hours */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-zinc-100 text-zinc-700 flex items-center justify-center shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -173,7 +173,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   href="https://www.instagram.com/brandsheadquarter"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-pink-600 hover:scale-105 transition-transform"
+                  className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-zinc-800 hover:text-[#fb8e00] hover:scale-105 transition-transform"
                 >
                   <Instagram className="w-4 h-4" />
                 </a>
@@ -225,7 +225,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         placeholder="John Doe"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF5C28] focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#fb8e00] focus:bg-white"
                       />
                     </div>
                     <div>
@@ -238,7 +238,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         placeholder="john@company.com"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF5C28] focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#fb8e00] focus:bg-white"
                       />
                     </div>
                   </div>
@@ -258,7 +258,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                           placeholder="324 4518510"
                           value={form.phone}
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className="w-full px-4 py-3 rounded-r-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF5C28] focus:bg-white"
+                          className="w-full px-4 py-3 rounded-r-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#fb8e00] focus:bg-white"
                         />
                       </div>
                     </div>
@@ -271,7 +271,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                         placeholder="Your Business Name"
                         value={form.business}
                         onChange={(e) => setForm({ ...form, business: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF5C28] focus:bg-white"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#fb8e00] focus:bg-white"
                       />
                     </div>
                   </div>
@@ -285,7 +285,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                       placeholder="https://yourbusiness.com"
                       value={form.website}
                       onChange={(e) => setForm({ ...form, website: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF5C28] focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#fb8e00] focus:bg-white"
                     />
                   </div>
 
@@ -325,7 +325,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                       placeholder="Tell us about your project and goals..."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF5C28] focus:bg-white"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#fb8e00] focus:bg-white"
                     />
                   </div>
 
@@ -333,7 +333,7 @@ export default function ContactSection({ preselectedService }: ContactSectionPro
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-full text-sm font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-md shadow-black/10 flex items-center justify-center gap-2 group disabled:opacity-70"
+                    className="w-full py-4 rounded-full text-sm font-bold bg-[#11141C] text-white hover:bg-[#fb8e00] transition-all duration-300 shadow-md shadow-black/10 flex items-center justify-center gap-2 group disabled:opacity-70"
                   >
                     <span>Send Message</span>
                     <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

@@ -21,7 +21,7 @@ const INDUSTRIES = [
     name: "E-commerce & Retail",
     desc: "Direct-to-consumer store scaling, high AOV bundles, and automated customer retention funnels.",
     icon: ShoppingBag,
-    iconColor: "text-[#FF5C28]",
+    iconColor: "text-[#fb8e00]",
     bgColor: "bg-orange-50",
     badge: "D2C Scaling",
   },
@@ -45,8 +45,8 @@ const INDUSTRIES = [
     name: "Beauty & Personal Care",
     desc: "Organic skincare UGC reels, dermatologist reviews, before-and-after proof, and routine bundles.",
     icon: Droplets,
-    iconColor: "text-purple-500",
-    bgColor: "bg-purple-50",
+    iconColor: "text-zinc-800",
+    bgColor: "bg-zinc-100",
     badge: "UGC Heavy",
   },
   {
@@ -77,8 +77,8 @@ const INDUSTRIES = [
     name: "Lifestyle & Consumer Brands",
     desc: "Cultural positioning, omni-channel campaigns, retail shelf velocity, and memorable brand identity.",
     icon: Smile,
-    iconColor: "text-pink-500",
-    bgColor: "bg-pink-50",
+    iconColor: "text-[#fb8e00]",
+    bgColor: "bg-orange-50",
     badge: "Brand Affinity",
   },
 ];
@@ -115,7 +115,7 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
               <div
                 key={index}
                 onClick={() => onOpenContact && onOpenContact(ind.name)}
-                className="group relative p-6 sm:p-7 rounded-3xl bg-white border border-gray-200/90 shadow-xs hover:border-[#FF5C28]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                className="group relative p-6 sm:p-7 rounded-3xl bg-white border border-gray-200/90 shadow-xs hover:border-[#fb8e00]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -129,7 +129,7 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#fb8e00] transition-colors">
                     {ind.name}
                   </h3>
 
@@ -138,7 +138,7 @@ export default function IndustriesSection({ onOpenContact }: IndustriesSectionPr
                   </p>
                 </div>
 
-                <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-gray-400 group-hover:text-[#FF5C28] transition-colors">
+                <div className="pt-4 mt-5 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-gray-400 group-hover:text-[#fb8e00] transition-colors">
                   <span>Explore playbooks</span>
                   <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>

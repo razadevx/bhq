@@ -33,7 +33,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-[#11141C] selection:bg-[#FF5C28] selection:text-white">
+    <main className="min-h-screen bg-white text-[#010101] selection:bg-[#fb8e00] selection:text-white">
       {/* Aesthetic Brand Preloader with Logo Shimmer Animation */}
       <Preloader />
 

@@ -13,7 +13,7 @@
     --border: 226 232 240;
     --card: 255 255 255;
     --card-foreground: 17 20 28;
-    --primary: 255 92 40;
+    --primary: 251 142 0;
     --primary-foreground: 255 255 255;
   }
 
@@ -51,11 +51,11 @@
 
   /* Clip-text descender protector: ensures 'g', 'y', 'p', 'j', 'q' are never cut off */
   .gradient-heading-accent {
-    @apply inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6];
+    @apply inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#fb8e00] via-[#ffb03a] to-[#d97706];
   }
 
   .gradient-heading-accent-warm {
-    @apply inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] to-[#EC4899];
+    @apply inline-block pb-2 text-transparent bg-clip-text bg-gradient-to-r from-[#fb8e00] via-[#ffa21a] to-[#e07d00];
   }
 
   /* H3: Card / Subsection Title - scaled +15% */
@@ -141,13 +141,13 @@ html.lenis, html.lenis body {
 
 /* Gradient text */
 .text-gradient-primary {
-  background: linear-gradient(135deg, #ff5c28 0%, #ec4899 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #fb8e00 0%, #ffb03a 50%, #e07d00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-orange {
-  background: linear-gradient(135deg, #ff8a65 0%, #ff5c28 50%, #e64a19 100%);
+  background: linear-gradient(135deg, #ffb03a 0%, #fb8e00 50%, #e07d00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

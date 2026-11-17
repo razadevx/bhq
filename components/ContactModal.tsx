@@ -77,7 +77,7 @@ export default function ContactModal({
                   setSubmitted(false);
                   onClose();
                 }}
-                className="px-6 py-2.5 rounded-full text-xs font-bold bg-[#FF5C28] text-white"
+                className="px-6 py-2.5 rounded-full text-xs font-bold bg-[#fb8e00] text-white"
               >
                 Close Window
               </button>
@@ -86,7 +86,7 @@ export default function ContactModal({
         ) : (
           <div>
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF5C28]/10 text-[#FF5C28] text-[11px] font-bold uppercase mb-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fb8e00]/10 text-[#fb8e00] text-[11px] font-bold uppercase mb-2">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Confidential Growth Audit</span>
               </div>
@@ -112,7 +112,7 @@ export default function ContactModal({
                       onClick={() => setSelectedService(chip)}
                       className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                         selectedService === chip
-                          ? "bg-[#FF5C28] text-white"
+                          ? "bg-[#fb8e00] text-white"
                           : "bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-white/5"
                       }`}
                     >
@@ -135,7 +135,7 @@ export default function ContactModal({
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="e.g. Usama"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#FF5C28]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#fb8e00]"
                   />
                 </div>
                 <div>
@@ -150,7 +150,7 @@ export default function ContactModal({
                       setFormData({ ...formData, email: e.target.value })
                     }
                     placeholder="usama@store.com"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#FF5C28]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#fb8e00]"
                   />
                 </div>
               </div>
@@ -168,7 +168,7 @@ export default function ContactModal({
                       setFormData({ ...formData, phone: e.target.value })
                     }
                     placeholder="+92 300 0000000"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#FF5C28]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#fb8e00]"
                   />
                 </div>
                 <div>
@@ -182,7 +182,7 @@ export default function ContactModal({
                       setFormData({ ...formData, brand: e.target.value })
                     }
                     placeholder="mybrand.com"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#FF5C28]"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#fb8e00]"
                   />
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function ContactModal({
                   onChange={(e) =>
                     setFormData({ ...formData, budget: e.target.value })
                   }
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#FF5C28]"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#fb8e00]"
                 >
                   <option value="PKR 200k – 500k / month">PKR 200k – 500k / month</option>
                   <option value="PKR 500k – 1M / month">PKR 500k – 1M / month</option>
@@ -216,14 +216,14 @@ export default function ContactModal({
                     setFormData({ ...formData, notes: e.target.value })
                   }
                   placeholder="e.g. High CAC, ads not converting, needing fresh UGC video hooks..."
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#FF5C28]"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-gray-50 dark:bg-[#11141C] border border-gray-200 dark:border-white/10 text-xs text-gray-900 dark:text-white focus:outline-none focus:border-[#fb8e00]"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 rounded-full text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] transition-all shadow-md shadow-[#FF5C28]/25 flex items-center justify-center gap-2 group disabled:opacity-70 mt-2"
+                className="w-full py-3.5 rounded-full text-sm font-bold bg-[#fb8e00] text-white hover:bg-[#e07d00] transition-all shadow-md shadow-[#fb8e00]/25 flex items-center justify-center gap-2 group disabled:opacity-70 mt-2"
               >
                 {loading ? (
                   <span>Reserving Calendar Slot...</span>

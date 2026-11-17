@@ -37,7 +37,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-[#FF5C28] hover:text-white hover:border-[#FF5C28] flex items-center justify-center transition-colors text-gray-400"
+                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-[#fb8e00] hover:text-white hover:border-[#fb8e00] flex items-center justify-center transition-colors text-gray-400"
               >
                 <Facebook className="w-3.5 h-3.5" />
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-[#FF5C28] hover:text-white hover:border-[#FF5C28] flex items-center justify-center transition-colors text-gray-400"
+                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-[#fb8e00] hover:text-white hover:border-[#fb8e00] flex items-center justify-center transition-colors text-gray-400"
               >
                 <Instagram className="w-3.5 h-3.5" />
               </a>
@@ -55,7 +55,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-[#FF5C28] hover:text-white hover:border-[#FF5C28] flex items-center justify-center transition-colors text-gray-400"
+                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:bg-[#fb8e00] hover:text-white hover:border-[#fb8e00] flex items-center justify-center transition-colors text-gray-400"
               >
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
@@ -176,13 +176,13 @@ export default function Footer() {
 
             <div className="pt-2 text-xs space-y-1 text-gray-400">
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#FF5C28]" />
+                <Mail className="w-3.5 h-3.5 text-[#fb8e00]" />
                 <a href="mailto:hello@brandsheadquarter.com" className="hover:text-white">
                   hello@brandsheadquarter.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#FF5C28]" />
+                <Phone className="w-3.5 h-3.5 text-[#fb8e00]" />
                 <a href="tel:+923111173477" className="hover:text-white">
                   +92 311 1173477
                 </a>

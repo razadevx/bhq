@@ -32,9 +32,9 @@ export default function Marquee() {
           {[...BRANDS, ...BRANDS].map((brand, index) => (
             <div
               key={`${brand.name}-${index}`}
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-[#161B26] border border-gray-200/80 dark:border-white/10 shadow-xs hover:border-[#FF5C28]/50 transition-all cursor-default group"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-[#161B26] border border-gray-200/80 dark:border-white/10 shadow-xs hover:border-[#fb8e00]/50 transition-all cursor-default group"
             >
-              <div className="w-2 h-2 rounded-full bg-[#FF5C28] group-hover:scale-125 transition-transform" />
+              <div className="w-2 h-2 rounded-full bg-[#fb8e00] group-hover:scale-125 transition-transform" />
               <span className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
                 {brand.name}
               </span>
@@ -52,9 +52,9 @@ export default function Marquee() {
           {[...BRANDS.slice().reverse(), ...BRANDS.slice().reverse()].map((brand, index) => (
             <div
               key={`rev-${brand.name}-${index}`}
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-[#161B26] border border-gray-200/80 dark:border-white/10 shadow-xs hover:border-[#FF5C28]/50 transition-all cursor-default group"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white dark:bg-[#161B26] border border-gray-200/80 dark:border-white/10 shadow-xs hover:border-[#fb8e00]/50 transition-all cursor-default group"
             >
-              <div className="w-2 h-2 rounded-full bg-purple-500 group-hover:scale-125 transition-transform" />
+              <div className="w-2 h-2 rounded-full bg-[#fb8e00] group-hover:scale-125 transition-transform" />
               <span className="text-sm font-bold text-gray-900 dark:text-white tracking-tight">
                 {brand.name}
               </span>

@@ -35,7 +35,7 @@ export default function FlagshipPartnersSection() {
         {/* H2 Heading (Exact from PDF Page 2) */}
         <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-gray-900 leading-[1.1] mb-4">
           <span>Pakistan&apos;s Fastest-Growing Brands</span>{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C28] via-[#EC4899] to-[#8B5CF6]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fb8e00] via-[#ffb03a] to-[#d97706]">
             Already Trust Us
           </span>
         </h2>
@@ -51,12 +51,12 @@ export default function FlagshipPartnersSection() {
             <div
               key={index}
               title={client.alt}
-              className="relative p-5 sm:p-6 rounded-2xl bg-white border border-gray-200/90 shadow-xs hover:border-[#FF5C28]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center min-h-[110px] group cursor-default"
+              className="relative p-5 sm:p-6 rounded-2xl bg-white border border-gray-200/90 shadow-xs hover:border-[#fb8e00]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center min-h-[110px] group cursor-default"
             >
               {/* Indicator Dot */}
-              <span className="absolute top-2.5 left-2.5 w-1.5 h-1.5 rounded-full bg-rose-400 opacity-60 group-hover:bg-[#FF5C28] group-hover:scale-125 transition-all" />
+              <span className="absolute top-2.5 left-2.5 w-1.5 h-1.5 rounded-full bg-rose-400 opacity-60 group-hover:bg-[#fb8e00] group-hover:scale-125 transition-all" />
 
-              <span className="text-xs sm:text-sm font-black text-gray-900 tracking-tight text-center leading-tight group-hover:text-[#FF5C28] transition-colors">
+              <span className="text-xs sm:text-sm font-black text-gray-900 tracking-tight text-center leading-tight group-hover:text-[#fb8e00] transition-colors">
                 {client.name}
               </span>
               <span className="text-[10px] text-gray-400 font-medium tracking-tight mt-1 text-center line-clamp-1">

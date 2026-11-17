@@ -11,12 +11,12 @@ const HONOREES = [
   {
     name: "Malak Hanzala",
     role: "Web Development Head",
-    gradient: "from-purple-600 to-violet-900",
+    gradient: "from-zinc-700 to-zinc-950",
   },
   {
     name: "Kinza Khan",
     role: "Chief Marketing Officer",
-    gradient: "from-[#FF5C28] to-rose-900",
+    gradient: "from-[#fb8e00] to-[#e07d00]",
   },
   {
     name: "M. Jameel Khan",

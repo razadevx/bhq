@@ -88,7 +88,7 @@ export default function FAQSection() {
         <div className="text-center mb-16">
           {/* Eyebrow Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-gray-200 bg-gray-50 mb-4">
-            <HelpCircle className="w-3.5 h-3.5 text-[#FF5C28]" />
+            <HelpCircle className="w-3.5 h-3.5 text-[#fb8e00]" />
             <span className="text-[11px] font-bold uppercase tracking-wider text-gray-700">
               GOT QUESTIONS?
             </span>
@@ -113,7 +113,7 @@ export default function FAQSection() {
             return (
               <div
                 key={index}
-                className="rounded-2xl border border-gray-200/90 bg-white transition-all duration-200 overflow-hidden shadow-xs hover:border-[#FF5C28]/40"
+                className="rounded-2xl border border-gray-200/90 bg-white transition-all duration-200 overflow-hidden shadow-xs hover:border-[#fb8e00]/40"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -126,7 +126,7 @@ export default function FAQSection() {
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
                       isOpen
-                        ? "bg-[#FF5C28] text-white rotate-180"
+                        ? "bg-[#fb8e00] text-white rotate-180"
                         : "bg-gray-100 text-gray-600"
                     }`}
                   >

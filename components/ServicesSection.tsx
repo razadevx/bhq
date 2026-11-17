@@ -33,9 +33,9 @@ const SERVICES = [
     ],
     ctaText: "Explore Performance Marketing →",
     icon: TrendingUp,
-    iconColor: "text-[#FF5C28]",
+    iconColor: "text-[#fb8e00]",
     bgColor: "bg-orange-50",
-    borderColor: "hover:border-[#FF5C28]/50",
+    borderColor: "hover:border-[#fb8e00]/50",
   },
   {
     num: "02",
@@ -52,9 +52,9 @@ const SERVICES = [
     ],
     ctaText: "Explore Branding →",
     icon: Palette,
-    iconColor: "text-rose-500",
-    bgColor: "bg-rose-50",
-    borderColor: "hover:border-rose-400/50",
+    iconColor: "text-amber-600",
+    bgColor: "bg-amber-50",
+    borderColor: "hover:border-amber-400/50",
   },
   {
     num: "03",
@@ -72,9 +72,9 @@ const SERVICES = [
     ],
     ctaText: "Explore Creative Production →",
     icon: Video,
-    iconColor: "text-purple-500",
-    bgColor: "bg-purple-50",
-    borderColor: "hover:border-purple-400/50",
+    iconColor: "text-zinc-800",
+    bgColor: "bg-zinc-100",
+    borderColor: "hover:border-zinc-400/50",
   },
   {
     num: "04",
@@ -166,9 +166,9 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
           <div className="lg:col-span-4 flex lg:justify-end items-center">
             <button
               onClick={() => onOpenContact("Free Audit")}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-gray-900 border border-gray-200 hover:border-[#FF5C28] hover:text-[#FF5C28] shadow-xs hover:shadow-md transition-all duration-300"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-gray-900 border border-gray-200 hover:border-[#fb8e00] hover:text-[#fb8e00] shadow-xs hover:shadow-md transition-all duration-300"
             >
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#FF5C28]" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#fb8e00]" />
               <span>Not sure where to start? Get a free audit →</span>
             </button>
           </div>
@@ -202,7 +202,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
                   </div>
 
                   {/* Service Title as H3 (SEO Requirement) */}
-                  <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-gray-900 mb-3 tracking-tight group-hover:text-[#FF5C28] transition-colors">
+                  <h3 className="text-xl sm:text-2xl lg:text-[1.65rem] font-bold text-gray-900 mb-3 tracking-tight group-hover:text-[#fb8e00] transition-colors">
                     {service.num}. {service.title}
                   </h3>
 
@@ -228,14 +228,14 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
                 <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
                   <button
                     onClick={() => onOpenContact(service.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-900 group-hover:text-[#FF5C28] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-900 group-hover:text-[#fb8e00] transition-colors"
                   >
                     <span>{service.ctaText}</span>
                   </button>
                   <button
                     onClick={() => onOpenContact(service.title)}
                     aria-label={`Open consultation for ${service.title}`}
-                    className="w-8 h-8 rounded-full bg-gray-100 text-gray-600 group-hover:bg-[#FF5C28] group-hover:text-white flex items-center justify-center transition-colors shadow-xs"
+                    className="w-8 h-8 rounded-full bg-gray-100 text-gray-600 group-hover:bg-[#fb8e00] group-hover:text-white flex items-center justify-center transition-colors shadow-xs"
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
@@ -257,7 +257,7 @@ export default function ServicesSection({ onOpenContact }: ServicesSectionProps)
           </div>
           <button
             onClick={() => onOpenContact("Free Growth Audit")}
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-md shadow-[#FF5C28]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-bold bg-[#fb8e00] text-white hover:bg-[#e64a19] shadow-md shadow-[#fb8e00]/25 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             <span>Get a Free Audit →</span>
           </button>

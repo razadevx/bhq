@@ -8,16 +8,16 @@ interface CTASectionProps {
 
 export default function CTASection({ onOpenContact }: CTASectionProps) {
   return (
-    <section className="py-20 sm:py-28 bg-[#0c0c12] text-white relative overflow-hidden text-center">
+    <section className="py-20 sm:py-28 bg-[#010101] text-white relative overflow-hidden text-center">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#FF5C28]/15 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute -top-24 right-10 w-[350px] h-[350px] bg-[#EC4899]/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#fb8e00]/15 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute -top-24 right-10 w-[350px] h-[350px] bg-[#fb8e00]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
         <div className="mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider text-orange-300 bg-white/5 border border-white/10 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5C28] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#fb8e00] animate-pulse" />
             YOUR NEXT GROWTH CHAPTER STARTS HERE
           </span>
         </div>
@@ -42,7 +42,7 @@ export default function CTASection({ onOpenContact }: CTASectionProps) {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-bold bg-[#FF5C28] text-white hover:bg-[#e64a19] hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-[#FF5C28]/30 group"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-sm font-bold bg-[#fb8e00] text-white hover:bg-[#e07d00] hover:scale-105 active:scale-95 transition-all duration-300 shadow-2xl shadow-[#fb8e00]/30 group"
           >
             <span>Book My Free Strategy Call</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

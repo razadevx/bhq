@@ -51,7 +51,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       }`}
     >
       {/* Subtle warm ambient backdrop glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[320px] bg-gradient-to-tr from-[#FF5C28]/08 via-[#FFA07A]/06 to-[#EC4899]/06 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[320px] bg-gradient-to-tr from-[#fb8e00]/10 via-[#ffb03a]/06 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       {/* Center Brand Identity Container */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
@@ -59,7 +59,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         <div className="relative mb-5 flex items-center justify-center">
           {/* Delicate Orange Halo behind the Logo Dot */}
           <div
-            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-[#FF5C28]/15 blur-xl transition-all duration-1000 ease-out pointer-events-none ${
+            className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-[#fb8e00]/15 blur-xl transition-all duration-1000 ease-out pointer-events-none ${
               phase === "active" ? "scale-125 opacity-100" : "scale-75 opacity-0"
             }`}
           />

@@ -11,7 +11,7 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
     <section id="portal" className="py-24 bg-white relative overflow-hidden">
       {/* Ambient background blur */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-orange-50 via-pink-50 to-purple-50 rounded-full blur-3xl opacity-70" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-orange-50 via-zinc-100/50 to-orange-50/40 rounded-full blur-3xl opacity-70" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -67,11 +67,11 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
             {/* Status Pills */}
             <div className="grid grid-cols-3 gap-2 mb-4 text-center">
               <div className="p-2 rounded-xl bg-orange-50 border border-orange-100">
-                <span className="text-xs font-black text-[#FF5C28] block">3</span>
+                <span className="text-xs font-black text-[#fb8e00] block">3</span>
                 <span className="text-[9px] font-bold text-gray-500">In Progress</span>
               </div>
-              <div className="p-2 rounded-xl bg-purple-50 border border-purple-100">
-                <span className="text-xs font-black text-purple-600 block">1</span>
+              <div className="p-2 rounded-xl bg-zinc-100 border border-zinc-200">
+                <span className="text-xs font-black text-zinc-800 block">1</span>
                 <span className="text-[9px] font-bold text-gray-500">Approval</span>
               </div>
               <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-100">
@@ -112,10 +112,10 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
             <div className="p-3 rounded-xl bg-gray-50 border border-gray-100 space-y-1.5">
               <div className="flex justify-between text-[10px] font-bold">
                 <span className="text-gray-700">Meta Advantage+ Spend</span>
-                <span className="text-[#FF5C28]">4.1x ROAS (On Track)</span>
+                <span className="text-[#fb8e00]">4.1x ROAS (On Track)</span>
               </div>
               <div className="w-full h-1.5 rounded-full bg-gray-200 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-[#FF5C28] to-[#EC4899] rounded-full w-[75%]" />
+                <div className="h-full bg-gradient-to-r from-[#fb8e00] to-[#ffa21a] rounded-full w-[75%]" />
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function ClientPortalSection({ onOpenContact }: ClientPortalSecti
         <div className="mt-5">
           <button
             onClick={onOpenContact}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#11141C] text-white hover:bg-[#FF5C28] transition-all duration-300 shadow-lg hover:shadow-[#FF5C28]/25"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#010101] text-white hover:bg-[#fb8e00] transition-all duration-300 shadow-lg hover:shadow-[#fb8e00]/25"
           >
             <span>Experience It Live</span>
             <ArrowRight className="w-4 h-4" />

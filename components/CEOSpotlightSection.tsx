@@ -6,8 +6,8 @@ export default function CEOSpotlightSection() {
   return (
     <section className="py-24 bg-[#0c0c12] text-white relative overflow-hidden">
       {/* Ambient background glows */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#FF5C28]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#fb8e00]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Eyebrow Pill */}
@@ -31,17 +31,17 @@ export default function CEOSpotlightSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: CEO Portrait with Neon Border (Matching Page 7 of PDF) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-start">
-            <div className="relative p-1 rounded-3xl bg-gradient-to-tr from-pink-500 via-[#FF5C28] to-purple-600 shadow-2xl shadow-[#FF5C28]/20 max-w-sm w-full">
+            <div className="relative p-1 rounded-3xl bg-gradient-to-tr from-[#fb8e00] via-white/20 to-[#fb8e00] shadow-2xl shadow-[#fb8e00]/20 max-w-sm w-full">
               <div className="relative aspect-[3/4] rounded-[1.4rem] overflow-hidden bg-gray-900">
                 {/* Elegant grayscale speaker image */}
                 <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-800 to-black flex items-center justify-center p-8 text-center">
                   <div className="space-y-4">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#FF5C28] to-[#EC4899] flex items-center justify-center text-3xl font-black text-white mx-auto shadow-lg">
+                    <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-[#fb8e00] to-[#ffa21a] flex items-center justify-center text-3xl font-black text-white mx-auto shadow-lg">
                       UK
                     </div>
                     <div>
                       <h4 className="text-xl font-black text-white">Usama Khan</h4>
-                      <p className="text-xs font-semibold text-[#FF5C28]">CEO &amp; Founder</p>
+                      <p className="text-xs font-semibold text-[#fb8e00]">CEO &amp; Founder</p>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function CEOSpotlightSection() {
 
             {/* Signature & Designation */}
             <div className="pt-6 border-t border-white/10 flex items-center gap-4">
-              <span className="font-serif italic text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-[#FF5C28]">
+              <span className="font-serif italic text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-[#fb8e00]">
                 Usama Khan
               </span>
               <span className="text-xs uppercase tracking-widest font-bold text-gray-500">
