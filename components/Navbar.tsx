@@ -35,8 +35,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
       <div
         className={`pointer-events-auto w-full transition-all duration-500 ease-out ${
           isScrolled
-            ? "mt-2.5 sm:mt-3 max-w-5xl rounded-full bg-white/90 backdrop-blur-xl border border-gray-200/90 px-4 sm:px-6 py-2 sm:py-2.5 shadow-xl shadow-black/5 ring-1 ring-black/5 text-[#11141C]"
-            : "mt-3.5 sm:mt-5 max-w-7xl rounded-full bg-[#0E1118]/75 backdrop-blur-xl border border-white/10 px-5 sm:px-8 py-3 sm:py-3.5 shadow-2xl shadow-black/30 text-white"
+            ? "mt-2.5 sm:mt-3 max-w-5xl rounded-full bg-white/90 backdrop-blur-xl border border-gray-200/90 px-4 sm:px-6 py-2 sm:py-2.5 shadow-xl shadow-black/5 ring-1 ring-black/5 text-[#010101]"
+            : "mt-3.5 sm:mt-5 max-w-7xl rounded-full bg-[#010101]/80 backdrop-blur-xl border border-white/10 px-5 sm:px-8 py-3 sm:py-3.5 shadow-2xl shadow-black/40 text-white"
         }`}
       >
         <div className="flex items-center justify-between gap-4">
@@ -70,8 +70,8 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
                 href={link.href}
                 className={`px-3.5 py-1 text-xs font-semibold rounded-full transition-all duration-200 ${
                   isScrolled
-                    ? "text-gray-700 hover:text-[#FF5C28] hover:bg-white"
-                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                    ? "text-gray-700 hover:text-[#fb8e00] hover:bg-white"
+                    : "text-gray-300 hover:text-[#fb8e00] hover:bg-white/10"
                 }`}
               >
                 {link.label}
@@ -86,21 +86,21 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
               onClick={() => onOpenContact("Free Brand Audit")}
               className={`inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold border transition-all duration-300 shadow-xs hover:shadow-sm ${
                 isScrolled
-                  ? "border-gray-300/90 bg-white hover:border-[#FF5C28] hover:text-[#FF5C28] text-gray-800"
-                  : "border-white/15 bg-white/[0.06] hover:border-[#FF5C28] text-gray-200 hover:text-white"
+                  ? "border-gray-300/90 bg-white hover:border-[#fb8e00] hover:text-[#fb8e00] text-gray-800"
+                  : "border-white/15 bg-white/[0.06] hover:border-[#fb8e00] text-gray-200 hover:text-white"
               }`}
             >
-              <FileText className="w-3.5 h-3.5 text-[#FF5C28]" />
+              <FileText className="w-3.5 h-3.5 text-[#fb8e00]" />
               <span>Free Audit</span>
             </button>
 
             {/* Let's Talk Button */}
             <button
               onClick={() => onOpenContact("General Inquiry")}
-              className={`group inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#FF5C28]/25 ${
+              className={`group inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-bold transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-[#fb8e00]/25 ${
                 isScrolled
-                  ? "bg-[#11141C] text-white hover:bg-[#FF5C28]"
-                  : "bg-[#FF5C28] text-white hover:bg-[#e64a19] shadow-[#FF5C28]/20"
+                  ? "bg-[#010101] text-white hover:bg-[#fb8e00]"
+                  : "bg-[#fb8e00] text-white hover:bg-[#e07d00] shadow-[#fb8e00]/20"
               }`}
             >
               <span>Let&apos;s Talk</span>
@@ -137,14 +137,14 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
 
       {/* Mobile Menu Dropdown Capsule */}
       {mobileMenuOpen && (
-        <div className="pointer-events-auto mt-2 w-full max-w-5xl rounded-3xl bg-[#0E1118]/95 backdrop-blur-2xl border border-white/10 px-6 py-6 transition-all shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 text-white">
+        <div className="pointer-events-auto mt-2 w-full max-w-5xl rounded-3xl bg-[#010101]/95 backdrop-blur-2xl border border-white/10 px-6 py-6 transition-all shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 text-white">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 text-sm font-semibold text-gray-200 hover:text-[#FF5C28] border-b border-white/10"
+                className="py-2 text-sm font-semibold text-gray-200 hover:text-[#fb8e00] border-b border-white/10"
               >
                 {link.label}
               </a>
@@ -157,7 +157,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
                 }}
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-full text-sm font-bold border border-white/20 bg-white/5 text-white shadow-xs"
               >
-                <FileText className="w-4 h-4 text-[#FF5C28]" />
+                <FileText className="w-4 h-4 text-[#fb8e00]" />
                 <span>Get Free Brand Audit</span>
               </button>
               <button
@@ -165,7 +165,7 @@ export default function Navbar({ onOpenContact }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onOpenContact("General Inquiry");
                 }}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-full text-sm font-bold bg-[#FF5C28] text-white shadow-lg shadow-[#FF5C28]/25"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-full text-sm font-bold bg-[#fb8e00] text-white shadow-lg shadow-[#fb8e00]/25"
               >
                 <span>Let&apos;s Talk</span>
                 <ArrowRight className="w-4 h-4" />
