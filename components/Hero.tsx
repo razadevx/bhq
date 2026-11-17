@@ -37,7 +37,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative h-[100dvh] min-h-[580px] max-h-[960px] lg:max-h-[1050px] flex flex-col justify-between items-center overflow-hidden bg-[#010101] text-[#ffffff] pt-20 sm:pt-24 lg:pt-28 pb-3 sm:pb-4 select-none"
+      className="relative min-h-[100dvh] h-auto lg:h-[100dvh] max-h-none lg:max-h-[1050px] flex flex-col justify-between items-center overflow-hidden bg-[#010101] text-[#ffffff] pt-24 sm:pt-28 lg:pt-32 pb-5 sm:pb-6 select-none"
     >
       {/* ============================================================ */}
       {/* EXECUTIVE AGENCY AMBIENT LIGHTING & SUBTLE GRID (ORANGE & BLACK, NO PINK) */}
@@ -56,10 +56,10 @@ export default function Hero({ onOpenContact }: HeroProps) {
       {/* ============================================================ */}
       {/* COMMANDING AGENCY HERO TYPOGRAPHY & CONVERSION HIERARCHY     */}
       {/* ============================================================ */}
-      <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10">
-        {/* Eyebrow Meta Bar - Clean Positioning Badge (Non-Repetitive) */}
-        <div className="mb-3 sm:mb-4">
-          <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 bg-white/[0.05] border border-white/10 backdrop-blur-md shadow-inner">
+      <div className="relative my-auto flex flex-col items-center text-center px-4 sm:px-6 max-w-5xl w-full z-10 py-4 sm:py-6">
+        {/* Eyebrow Meta Bar (+15px spacing: mb-7 sm:mb-8) */}
+        <div className="mb-7 sm:mb-8">
+          <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-medium tracking-wide text-gray-300 bg-white/[0.05] border border-white/10 backdrop-blur-md shadow-inner">
             <span className="w-1.5 h-1.5 rounded-full bg-[#fb8e00] animate-pulse" />
             <span className="text-white font-semibold">Pakistan&apos;s Premier Performance &amp; Creative Agency</span>
             <span className="hidden sm:inline text-white/20">•</span>
@@ -67,8 +67,8 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </div>
         </div>
 
-        {/* Monumental Agency 3-Line Headline (Reduced by 10% for Optimal Proportion) */}
-        <h1 className="text-[1.7rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] xl:text-[3.95rem] font-extrabold tracking-[-0.03em] text-[#ffffff] leading-[1.09] mb-3 sm:mb-4 max-w-4xl">
+        {/* Monumental Agency 3-Line Headline (+15px spacing: mb-7 sm:mb-8) */}
+        <h1 className="text-[1.7rem] sm:text-4xl md:text-5xl lg:text-[3.6rem] xl:text-[3.95rem] font-extrabold tracking-[-0.03em] text-[#ffffff] leading-[1.09] mb-7 sm:mb-8 max-w-4xl">
           The Agency <br />
           Behind 8-Figure <br />
           <span className="inline-block">
@@ -84,44 +84,42 @@ export default function Hero({ onOpenContact }: HeroProps) {
           </span>
         </h1>
 
-        {/* Punchy, Direct-Response Subheadline (Unique, High-Converting Copy) */}
-        <p className="text-xs sm:text-sm md:text-base text-gray-300 font-normal max-w-xl mx-auto leading-relaxed mb-5 sm:mb-6">
+        {/* Punchy, Direct-Response Subheadline (+15px spacing: mb-8 sm:mb-10) */}
+        <p className="text-xs sm:text-sm md:text-base text-gray-300 font-normal max-w-xl mx-auto leading-relaxed mb-8 sm:mb-10">
           We engineer high-converting campaigns, conversion-first creative, and dedicated retention systems that turn customer attention into sustainable revenue.{" "}
           <span className="text-[#ffffff] font-semibold">No juggling vendors. No excuses. Just measurable results.</span>
         </p>
 
-        {/* High-Converting Agency Dual CTAs */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+        {/* High-Converting Agency Dual CTAs (+15px spacing: mb-7 sm:mb-9) */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-7 sm:mb-9">
           <button
             onClick={() => onOpenContact("Free Growth Plan")}
-            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm md:text-base font-bold bg-[#fb8e00] text-[#ffffff] hover:bg-[#e07d00] shadow-lg shadow-[#fb8e00]/25 hover:shadow-xl hover:shadow-[#fb8e00]/45 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-bold bg-[#fb8e00] text-[#ffffff] hover:bg-[#e07d00] shadow-lg shadow-[#fb8e00]/25 hover:shadow-xl hover:shadow-[#fb8e00]/45 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
           >
             <span>Book a Free Strategy Call</span>
             <ArrowRight className="w-4 h-4" />
           </button>
           <a
             href="#case-studies"
-            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-xs sm:text-sm md:text-base font-semibold bg-white/[0.06] backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-[#fb8e00]/50 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-sm md:text-base font-semibold bg-white/[0.06] backdrop-blur-md border border-white/15 text-white hover:text-white hover:border-[#fb8e00]/50 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm"
           >
             See Our Results →
           </a>
         </div>
 
-        {/* Agency Social Proof & Trust Credentials (Locations Listed Exclusively Here) */}
-        <div className="text-xs sm:text-[13px] text-gray-300 font-medium tracking-wide flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 pt-2.5 border-t border-white/10 w-full max-w-2xl">
+        {/* Agency Social Proof & Trust Credentials (D2C & Enterprise removed, +15px spacing: pt-5 sm:pt-6) */}
+        <div className="text-xs sm:text-[13px] text-gray-300 font-medium tracking-wide flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 pt-5 sm:pt-6 border-t border-white/10 w-full max-w-2xl">
           <span className="text-[#fb8e00] font-bold tracking-widest">★★★★★</span>
           <span className="font-semibold text-white">200+ Brands Scaled</span>
           <span className="text-white/20">•</span>
           <span className="font-semibold text-white">PKR 500M+ Ad Spend</span>
           <span className="text-white/20">•</span>
           <span className="text-gray-300">Lahore · Karachi · Islamabad</span>
-          <span className="hidden sm:inline text-white/20">•</span>
-          <span className="hidden sm:inline text-gray-400">D2C &amp; Enterprise</span>
         </div>
       </div>
 
       {/* Subtle Downward Scroll Indicator */}
-      <div className="relative z-10 flex justify-center items-center pb-1 sm:pb-2">
+      <div className="relative z-10 flex justify-center items-center pb-2 sm:pb-3">
         <a
           href="#about"
           aria-label="Scroll down to about section"
